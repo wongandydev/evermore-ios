@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		491411E921D9DF18337B3015 /* Pods_EverMore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AABC6B61D28F4E8FD95CDE /* Pods_EverMore.framework */; };
+		763F155EC2F93FE0A8AEF17E /* Pods_EverMoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66052AC8C6D66000B096E3CC /* Pods_EverMoreTests.framework */; };
 		A0FC4494245D3C9E00B1ADCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC4493245D3C9E00B1ADCA /* AppDelegate.swift */; };
 		A0FC4496245D3C9E00B1ADCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC4495245D3C9E00B1ADCA /* SceneDelegate.swift */; };
-		A0FC4498245D3C9E00B1ADCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC4497245D3C9E00B1ADCA /* ViewController.swift */; };
 		A0FC449E245D3C9E00B1ADCA /* EverMore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0FC449C245D3C9E00B1ADCA /* EverMore.xcdatamodeld */; };
 		A0FC44A0245D3C9F00B1ADCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0FC449F245D3C9F00B1ADCA /* Assets.xcassets */; };
 		A0FC44A3245D3C9F00B1ADCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0FC44A1245D3C9F00B1ADCA /* LaunchScreen.storyboard */; };
 		A0FC44AE245D3C9F00B1ADCA /* EverMoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC44AD245D3C9F00B1ADCA /* EverMoreTests.swift */; };
 		A0FC44B9245D3C9F00B1ADCA /* EverMoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC44B8245D3C9F00B1ADCA /* EverMoreUITests.swift */; };
+		A0FC44C7245D435800B1ADCA /* OnboardingMultipleChoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC44C6245D435800B1ADCA /* OnboardingMultipleChoiceVC.swift */; };
+		C86218F138B07CE5CE6D297D /* Pods_EverMoreUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66E6358B98E129B8557F3011 /* Pods_EverMoreUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +38,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04AABC6B61D28F4E8FD95CDE /* Pods_EverMore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverMore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		18F27926BE2397D9039931A0 /* Pods-EverMore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverMore.release.xcconfig"; path = "Target Support Files/Pods-EverMore/Pods-EverMore.release.xcconfig"; sourceTree = "<group>"; };
+		28C7E18E314844E74394EAA0 /* Pods-EverMoreUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverMoreUITests.debug.xcconfig"; path = "Target Support Files/Pods-EverMoreUITests/Pods-EverMoreUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		58DF6E5C9F792FACEA8CF10C /* Pods-EverMoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverMoreTests.release.xcconfig"; path = "Target Support Files/Pods-EverMoreTests/Pods-EverMoreTests.release.xcconfig"; sourceTree = "<group>"; };
+		66052AC8C6D66000B096E3CC /* Pods_EverMoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverMoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66E6358B98E129B8557F3011 /* Pods_EverMoreUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverMoreUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94F8EFEDCDDAB8531583408A /* Pods-EverMoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverMoreTests.debug.xcconfig"; path = "Target Support Files/Pods-EverMoreTests/Pods-EverMoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A0FC4490245D3C9E00B1ADCA /* EverMore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverMore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FC4493245D3C9E00B1ADCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0FC4495245D3C9E00B1ADCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A0FC4497245D3C9E00B1ADCA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A0FC449D245D3C9E00B1ADCA /* EverMore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EverMore.xcdatamodel; sourceTree = "<group>"; };
 		A0FC449F245D3C9F00B1ADCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0FC44A2245D3C9F00B1ADCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +58,9 @@
 		A0FC44B4245D3C9F00B1ADCA /* EverMoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EverMoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FC44B8245D3C9F00B1ADCA /* EverMoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverMoreUITests.swift; sourceTree = "<group>"; };
 		A0FC44BA245D3C9F00B1ADCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0FC44C6245D435800B1ADCA /* OnboardingMultipleChoiceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMultipleChoiceVC.swift; sourceTree = "<group>"; };
+		E3114B7F732BF7ECA90779F7 /* Pods-EverMoreUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverMoreUITests.release.xcconfig"; path = "Target Support Files/Pods-EverMoreUITests/Pods-EverMoreUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EB876269660437636E5468DC /* Pods-EverMore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverMore.debug.xcconfig"; path = "Target Support Files/Pods-EverMore/Pods-EverMore.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				491411E921D9DF18337B3015 /* Pods_EverMore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				763F155EC2F93FE0A8AEF17E /* Pods_EverMoreTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C86218F138B07CE5CE6D297D /* Pods_EverMoreUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,8 @@
 				A0FC44AC245D3C9F00B1ADCA /* EverMoreTests */,
 				A0FC44B7245D3C9F00B1ADCA /* EverMoreUITests */,
 				A0FC4491245D3C9E00B1ADCA /* Products */,
+				A321ABA44588D50DF197E7F5 /* Pods */,
+				FC5DBEEA5AE077495DB28570 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,7 +118,7 @@
 			children = (
 				A0FC4493245D3C9E00B1ADCA /* AppDelegate.swift */,
 				A0FC4495245D3C9E00B1ADCA /* SceneDelegate.swift */,
-				A0FC4497245D3C9E00B1ADCA /* ViewController.swift */,
+				A0FC44C6245D435800B1ADCA /* OnboardingMultipleChoiceVC.swift */,
 				A0FC449F245D3C9F00B1ADCA /* Assets.xcassets */,
 				A0FC44A1245D3C9F00B1ADCA /* LaunchScreen.storyboard */,
 				A0FC44A4245D3C9F00B1ADCA /* Info.plist */,
@@ -128,6 +145,30 @@
 			path = EverMoreUITests;
 			sourceTree = "<group>";
 		};
+		A321ABA44588D50DF197E7F5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EB876269660437636E5468DC /* Pods-EverMore.debug.xcconfig */,
+				18F27926BE2397D9039931A0 /* Pods-EverMore.release.xcconfig */,
+				94F8EFEDCDDAB8531583408A /* Pods-EverMoreTests.debug.xcconfig */,
+				58DF6E5C9F792FACEA8CF10C /* Pods-EverMoreTests.release.xcconfig */,
+				28C7E18E314844E74394EAA0 /* Pods-EverMoreUITests.debug.xcconfig */,
+				E3114B7F732BF7ECA90779F7 /* Pods-EverMoreUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FC5DBEEA5AE077495DB28570 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04AABC6B61D28F4E8FD95CDE /* Pods_EverMore.framework */,
+				66052AC8C6D66000B096E3CC /* Pods_EverMoreTests.framework */,
+				66E6358B98E129B8557F3011 /* Pods_EverMoreUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0FC44BD245D3C9F00B1ADCA /* Build configuration list for PBXNativeTarget "EverMore" */;
 			buildPhases = (
+				DA4DAE5CF0B340A11648C023 /* [CP] Check Pods Manifest.lock */,
 				A0FC448C245D3C9E00B1ADCA /* Sources */,
 				A0FC448D245D3C9E00B1ADCA /* Frameworks */,
 				A0FC448E245D3C9E00B1ADCA /* Resources */,
+				FC2EF82BFA1647D93955BEAE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +195,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0FC44C0245D3C9F00B1ADCA /* Build configuration list for PBXNativeTarget "EverMoreTests" */;
 			buildPhases = (
+				831C6D37EB85BA1569EB6030 /* [CP] Check Pods Manifest.lock */,
 				A0FC44A5245D3C9F00B1ADCA /* Sources */,
 				A0FC44A6245D3C9F00B1ADCA /* Frameworks */,
 				A0FC44A7245D3C9F00B1ADCA /* Resources */,
@@ -170,6 +214,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A0FC44C3245D3C9F00B1ADCA /* Build configuration list for PBXNativeTarget "EverMoreUITests" */;
 			buildPhases = (
+				16B5F343AEF3AC06E1C83269 /* [CP] Check Pods Manifest.lock */,
 				A0FC44B0245D3C9F00B1ADCA /* Sources */,
 				A0FC44B1245D3C9F00B1ADCA /* Frameworks */,
 				A0FC44B2245D3C9F00B1ADCA /* Resources */,
@@ -253,12 +298,98 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		16B5F343AEF3AC06E1C83269 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EverMoreUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		831C6D37EB85BA1569EB6030 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EverMoreTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA4DAE5CF0B340A11648C023 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EverMore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC2EF82BFA1647D93955BEAE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EverMore/Pods-EverMore-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EverMore/Pods-EverMore-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EverMore/Pods-EverMore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A0FC448C245D3C9E00B1ADCA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0FC4498245D3C9E00B1ADCA /* ViewController.swift in Sources */,
+				A0FC44C7245D435800B1ADCA /* OnboardingMultipleChoiceVC.swift in Sources */,
 				A0FC4494245D3C9E00B1ADCA /* AppDelegate.swift in Sources */,
 				A0FC449E245D3C9E00B1ADCA /* EverMore.xcdatamodeld in Sources */,
 				A0FC4496245D3C9E00B1ADCA /* SceneDelegate.swift in Sources */,
@@ -424,6 +555,7 @@
 		};
 		A0FC44BE245D3C9F00B1ADCA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB876269660437636E5468DC /* Pods-EverMore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -444,6 +576,7 @@
 		};
 		A0FC44BF245D3C9F00B1ADCA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18F27926BE2397D9039931A0 /* Pods-EverMore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -464,6 +597,7 @@
 		};
 		A0FC44C1245D3C9F00B1ADCA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94F8EFEDCDDAB8531583408A /* Pods-EverMoreTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -486,6 +620,7 @@
 		};
 		A0FC44C2245D3C9F00B1ADCA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58DF6E5C9F792FACEA8CF10C /* Pods-EverMoreTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +643,7 @@
 		};
 		A0FC44C4245D3C9F00B1ADCA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28C7E18E314844E74394EAA0 /* Pods-EverMoreUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +664,7 @@
 		};
 		A0FC44C5245D3C9F00B1ADCA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3114B7F732BF7ECA90779F7 /* Pods-EverMoreUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
