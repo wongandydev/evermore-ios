@@ -14,25 +14,29 @@ class OnboardingMultipleChoiceViewController: UICollectionViewController, UIColl
     private let cellIdentifier = "onboardingCell"
     private var nullIndexPath: IndexPath?
     
-    private let backButton = UIButton()
-    private let nextButton = UIButton()
+    private let bottomBackNextView = BottomBackNextView()
+    
+
     private var cellsSelectedTypes = [SelectionType]() {
         didSet {
             if cellsSelectedTypes.count > 0 {
-                nextButton.isEnabled = true
+                bottomBackNextView.nextButton.isEnabled = true
             } else {
-                nextButton.isEnabled = false
+                bottomBackNextView.nextButton.isEnabled = false
             }
         }
     }
     
     var page: Int = 0
-    var cellData = [onboardingInfo(pageNumber: 0, dataType: .multipleChoice, categoryTitle: "Debt", question: "What debt do you owe right now?", cellText: ["Credit Card", "Student Loans", "Auto/Home Loans", "None"], multipleSelectionTypes: nil)]
+    var cellData = [
+        OnboardingInfo(pageNumber: 0, dataType: .multipleChoice, categoryTitle: "Debt", question: "What debt do you owe right now?", cellText: ["Credit Card", "Student Loans", "Auto/Home Loans", "None"], multipleSelectionTypes: nil),
+        OnboardingInfo(pageNumber: 2, dataType: .valuePicker, categoryTitle: "Salary", question: "How much do you make?", cellText: nil, multipleSelectionTypes: nil)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .systemBackground
+        self.navigationController?.navigationBar.isHidden = true
         
         setupCollectionVC()
         setupViews()
@@ -53,44 +57,36 @@ class OnboardingMultipleChoiceViewController: UICollectionViewController, UIColl
     }
     
     private func setupViews() {
-        let bottomButtonView = UIView()
-        bottomButtonView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
+        bottomBackNextView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
         
-        self.view.addSubview(bottomButtonView)
-        bottomButtonView.snp.makeConstraints({ make in
+        self.view.addSubview(bottomBackNextView)
+        bottomBackNextView.snp.makeConstraints({ make in
             make.width.equalToSuperview()
             make.centerX.equalToSuperview()
             make.bottom.equalToSuperview()
             make.height.equalTo(110)
         })
-        
-        
-        backButton.setTitle("Back", for: .normal)
-        backButton.backgroundColor = .gray
-        backButton.layer.cornerRadius = 8
-        backButton.isEnabled = (page != 0)
-        backButton.setTitleColor(.gray, for: .disabled)
-        
-        bottomButtonView.addSubview(backButton)
-        backButton.snp.makeConstraints({ make in
-            make.left.equalToSuperview().inset(20)
-            make.top.bottom.equalToSuperview().inset(20)
-            make.width.equalToSuperview().dividedBy(2).offset(-30)
-        })
-        
-        
-        nextButton.setTitle("Next", for: .normal)
-        nextButton.backgroundColor = .darkGray
-        nextButton.layer.cornerRadius = 8
-        nextButton.isEnabled = false
-        nextButton.setTitleColor(.gray, for: .disabled)
-        
-        bottomButtonView.addSubview(nextButton)
-        nextButton.snp.makeConstraints({ make in
-            make.right.equalToSuperview().inset(20)
-            make.top.bottom.equalToSuperview().inset(20)
-            make.width.equalToSuperview().dividedBy(2).offset(-30)
-        })
+
+        bottomBackNextView.backButton.isEnabled = (page != 0)
+        bottomBackNextView.nextButton.addTarget(self, action: #selector(nextButtonTapped(_:)), for: .touchUpInside)
+
+
+    }
+    
+    // MARK: - Button Funcs
+    
+    @objc func nextButtonTapped(_ sender: UIButton) {
+        if sender == bottomBackNextView.nextButton {
+            if cellsSelectedTypes.contains(.null) {
+                let nextVC = ValuePickerViewController()
+                nextVC.page = page + 1
+                nextVC.cellData = cellData
+                
+                self.navigationController?.pushViewController(nextVC, animated: true)
+            } else {
+                showAlertMessage(title: "Coming Soon", message: "")
+            }
+        }
     }
 }
 
@@ -197,7 +193,7 @@ extension OnboardingMultipleChoiceViewController {
 }
 
 
-struct onboardingInfo {
+struct OnboardingInfo {
     var pageNumber: Int!
     var dataType: DataType!
     var categoryTitle: String?
