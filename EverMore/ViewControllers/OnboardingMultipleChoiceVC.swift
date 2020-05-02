@@ -99,14 +99,14 @@ extension OnboardingMultipleChoiceViewController {
     // MARK: Delegate
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! OnboardingCell else { return }
+        guard collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) is OnboardingCell else { return }
         
         let cellSelectionType = SelectionType(string: cellData[page].cellText![indexPath.row])
             cellsSelectedTypes.append(cellSelectionType)
     }
     
     override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! OnboardingCell else { return }
+        guard collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) is OnboardingCell else { return }
         
         let cellSelectionType = SelectionType(string: cellData[page].cellText![indexPath.row])
         cellsSelectedTypes.removeAll(where: { $0 == cellSelectionType})
