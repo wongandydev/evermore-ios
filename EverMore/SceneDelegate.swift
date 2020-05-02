@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        let navVC = UINavigationController(rootViewController: OnboardingMultipleChoiceViewController(collectionViewLayout: UICollectionViewLayout()))
+        let navVC = UINavigationController(rootViewController: OnboardingMultipleChoiceViewController(collectionViewLayout: UICollectionViewFlowLayout()))
         window.rootViewController = navVC
         self.window = window
         window.makeKeyAndVisible()
