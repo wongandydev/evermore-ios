@@ -10,22 +10,42 @@ import UIKit
 import SnapKit
 
 class OnboardingMultipleChoiceViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-    let headerIdentifier = "onboardingHeaderView"
-    let cellIdentifier = "onboardingCell"
-    
+    private let headerIdentifier = "onboardingHeaderView"
+    private let cellIdentifier = "onboardingCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .systemBackground
         
+        setupCollectionVC()
+    }
+    
+    private func setupCollectionVC() {
         self.collectionView.backgroundColor = .clear
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        self.collectionView.reloadData()
         
+        registerCellsAndViews()
+    }
+    
+    private func registerCellsAndViews() {
         self.collectionView.register(OnboardingHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerIdentifier)
         self.collectionView.register(OnboardingCell.self, forCellWithReuseIdentifier: cellIdentifier)
+    }
+}
+
+// MARK: - CollectionView Delegate,DataSource, FlowLayout
+
+extension OnboardingMultipleChoiceViewController {
+    // MARK: DataSource
+    
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 30
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -39,6 +59,16 @@ class OnboardingMultipleChoiceViewController: UICollectionViewController, UIColl
         return headerView
     }
     
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! OnboardingCell
+        
+        cell.text = "text \(indexPath.section) \(indexPath.row)"
+        
+        return cell
+    }
+    
+    // MARK: Layout
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         
         return CGSize(width: self.collectionView.frame.size.width, height: 200)
@@ -46,22 +76,6 @@ class OnboardingMultipleChoiceViewController: UICollectionViewController, UIColl
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return .zero
-    }
-    
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! OnboardingCell
-        
-        cell.text = "text \(indexPath.section) \(indexPath.row)"
-        
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -79,62 +93,3 @@ class OnboardingMultipleChoiceViewController: UICollectionViewController, UIColl
 }
 
 
-
-class OnboardingHeaderView: UICollectionReusableView {
-    var text: String = "" {
-        didSet {
-            label.text = text
-        }
-    }
-    private let label = UILabel()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        label.text = text
-        label.numberOfLines = 0
-        label.textAlignment = .left
-        
-        self.addSubview(label)
-        label.snp.makeConstraints({ make in
-            make.width.equalToSuperview().multipliedBy(0.8)
-            make.center.equalToSuperview()
-        })
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-class OnboardingCell: UICollectionViewCell {
-    var text: String = "" {
-        didSet {
-            label.text = text
-        }
-    }
-    
-    private let label = UILabel()
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        self.backgroundColor = UIColor.systemGray
-        self.layer.cornerRadius = 10
-        
-        label.text = text
-        label.numberOfLines = 0
-        label.textAlignment = .left
-        
-        self.addSubview(label)
-        label.snp.makeConstraints({ make in
-            make.width.equalToSuperview().multipliedBy(0.8)
-            make.center.equalToSuperview()
-        })
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-}

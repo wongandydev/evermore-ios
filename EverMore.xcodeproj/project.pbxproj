@@ -3,12 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		491411E921D9DF18337B3015 /* Pods_EverMore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AABC6B61D28F4E8FD95CDE /* Pods_EverMore.framework */; };
 		763F155EC2F93FE0A8AEF17E /* Pods_EverMoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66052AC8C6D66000B096E3CC /* Pods_EverMoreTests.framework */; };
+		A0B68CA9245D55A7002B6DED /* OnboardingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B68CA8245D55A7002B6DED /* OnboardingHeaderView.swift */; };
+		A0B68CAB245D55B6002B6DED /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B68CAA245D55B6002B6DED /* OnboardingCell.swift */; };
 		A0FC4494245D3C9E00B1ADCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC4493245D3C9E00B1ADCA /* AppDelegate.swift */; };
 		A0FC4496245D3C9E00B1ADCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC4495245D3C9E00B1ADCA /* SceneDelegate.swift */; };
 		A0FC449E245D3C9E00B1ADCA /* EverMore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0FC449C245D3C9E00B1ADCA /* EverMore.xcdatamodeld */; };
@@ -45,6 +47,8 @@
 		66052AC8C6D66000B096E3CC /* Pods_EverMoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverMoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66E6358B98E129B8557F3011 /* Pods_EverMoreUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverMoreUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94F8EFEDCDDAB8531583408A /* Pods-EverMoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverMoreTests.debug.xcconfig"; path = "Target Support Files/Pods-EverMoreTests/Pods-EverMoreTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A0B68CA8245D55A7002B6DED /* OnboardingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingHeaderView.swift; sourceTree = "<group>"; };
+		A0B68CAA245D55B6002B6DED /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
 		A0FC4490245D3C9E00B1ADCA /* EverMore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverMore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FC4493245D3C9E00B1ADCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0FC4495245D3C9E00B1ADCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +95,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A0B68CAC245D56C0002B6DED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A0B68CAE245D56CF002B6DED /* HeaderViews */,
+				A0B68CAD245D56C7002B6DED /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A0B68CAD245D56C7002B6DED /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A0B68CAA245D55B6002B6DED /* OnboardingCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A0B68CAE245D56CF002B6DED /* HeaderViews */ = {
+			isa = PBXGroup;
+			children = (
+				A0B68CA8245D55A7002B6DED /* OnboardingHeaderView.swift */,
+			);
+			path = HeaderViews;
+			sourceTree = "<group>";
+		};
+		A0B68CAF245D574C002B6DED /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A0FC44C6245D435800B1ADCA /* OnboardingMultipleChoiceVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		A0FC4487245D3C9E00B1ADCA = {
 			isa = PBXGroup;
 			children = (
@@ -118,7 +155,8 @@
 			children = (
 				A0FC4493245D3C9E00B1ADCA /* AppDelegate.swift */,
 				A0FC4495245D3C9E00B1ADCA /* SceneDelegate.swift */,
-				A0FC44C6245D435800B1ADCA /* OnboardingMultipleChoiceVC.swift */,
+				A0B68CAF245D574C002B6DED /* ViewControllers */,
+				A0B68CAC245D56C0002B6DED /* Views */,
 				A0FC449F245D3C9F00B1ADCA /* Assets.xcassets */,
 				A0FC44A1245D3C9F00B1ADCA /* LaunchScreen.storyboard */,
 				A0FC44A4245D3C9F00B1ADCA /* Info.plist */,
@@ -155,7 +193,6 @@
 				28C7E18E314844E74394EAA0 /* Pods-EverMoreUITests.debug.xcconfig */,
 				E3114B7F732BF7ECA90779F7 /* Pods-EverMoreUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -391,6 +428,8 @@
 			files = (
 				A0FC44C7245D435800B1ADCA /* OnboardingMultipleChoiceVC.swift in Sources */,
 				A0FC4494245D3C9E00B1ADCA /* AppDelegate.swift in Sources */,
+				A0B68CAB245D55B6002B6DED /* OnboardingCell.swift in Sources */,
+				A0B68CA9245D55A7002B6DED /* OnboardingHeaderView.swift in Sources */,
 				A0FC449E245D3C9E00B1ADCA /* EverMore.xcdatamodeld in Sources */,
 				A0FC4496245D3C9E00B1ADCA /* SceneDelegate.swift in Sources */,
 			);
