@@ -12,6 +12,7 @@ import SnapKit
 class OnboardingMultipleChoiceViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     private let headerIdentifier = "onboardingHeaderView"
     private let cellIdentifier = "onboardingCell"
+    private var nullIndexPath: IndexPath?
     
     private let backButton = UIButton()
     private let nextButton = UIButton()
@@ -102,7 +103,30 @@ extension OnboardingMultipleChoiceViewController {
         guard collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) is OnboardingCell else { return }
         
         let cellSelectionType = SelectionType(string: cellData[page].cellText![indexPath.row])
-            cellsSelectedTypes.append(cellSelectionType)
+        if cellSelectionType == .null {
+            cellsSelectedTypes.removeAll()
+            
+            // deselect all if null
+            if let selectedItems = collectionView.indexPathsForSelectedItems {
+                for selectedIndexPath in selectedItems {
+                    if selectedIndexPath != indexPath {
+                        collectionView.deselectItem(at: selectedIndexPath, animated:true)
+                    }
+                    
+                }
+            }
+        } else {
+            cellsSelectedTypes.removeAll(where: { $0 == .null})
+            
+            // deselect null
+            if let nullIndexPath = nullIndexPath {
+                collectionView.deselectItem(at: nullIndexPath, animated:true)
+            }
+        }
+        
+        cellsSelectedTypes.append(cellSelectionType)
+        print(cellsSelectedTypes)
+
     }
     
     override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -135,9 +159,14 @@ extension OnboardingMultipleChoiceViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! OnboardingCell
+        let selectionType = SelectionType(string: cellData[page].cellText![indexPath.row])
         
         cell.text = cellData[page].cellText![indexPath.row]
-        cell.selectionType = SelectionType(string: cellData[page].cellText![indexPath.row])
+        cell.selectionType = selectionType
+        
+        if selectionType == .null {
+            self.nullIndexPath = indexPath
+        }
         
         return cell
     }
