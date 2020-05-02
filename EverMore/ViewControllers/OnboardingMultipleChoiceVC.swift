@@ -13,18 +13,35 @@ class OnboardingMultipleChoiceViewController: UICollectionViewController, UIColl
     private let headerIdentifier = "onboardingHeaderView"
     private let cellIdentifier = "onboardingCell"
     
+    private let backButton = UIButton()
+    private let nextButton = UIButton()
+    private var cellsSelectedTypes = [SelectionType]() {
+        didSet {
+            if cellsSelectedTypes.count > 0 {
+                nextButton.isEnabled = true
+            } else {
+                nextButton.isEnabled = false
+            }
+        }
+    }
+    
+    var page: Int = 0
+    var cellData = [onboardingInfo(pageNumber: 0, dataType: .multipleChoice, categoryTitle: "Debt", question: "What debt do you owe right now?", cellText: ["Credit Card", "Student Loans", "Auto/Home Loans"], multipleSelectionTypes: nil)]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .systemBackground
         
         setupCollectionVC()
+        setupViews()
     }
     
     private func setupCollectionVC() {
         self.collectionView.backgroundColor = .clear
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
+        self.collectionView.allowsMultipleSelection = true
         
         registerCellsAndViews()
     }
@@ -33,11 +50,68 @@ class OnboardingMultipleChoiceViewController: UICollectionViewController, UIColl
         self.collectionView.register(OnboardingHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerIdentifier)
         self.collectionView.register(OnboardingCell.self, forCellWithReuseIdentifier: cellIdentifier)
     }
+    
+    private func setupViews() {
+        let bottomButtonView = UIView()
+        bottomButtonView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
+        
+        self.view.addSubview(bottomButtonView)
+        bottomButtonView.snp.makeConstraints({ make in
+            make.width.equalToSuperview()
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.height.equalTo(110)
+        })
+        
+        
+        backButton.setTitle("Back", for: .normal)
+        backButton.backgroundColor = .gray
+        backButton.layer.cornerRadius = 8
+        backButton.isEnabled = (page != 0)
+        backButton.setTitleColor(.gray, for: .disabled)
+        
+        bottomButtonView.addSubview(backButton)
+        backButton.snp.makeConstraints({ make in
+            make.left.equalToSuperview().inset(20)
+            make.top.bottom.equalToSuperview().inset(20)
+            make.width.equalToSuperview().dividedBy(2).offset(-30)
+        })
+        
+        
+        nextButton.setTitle("Next", for: .normal)
+        nextButton.backgroundColor = .darkGray
+        nextButton.layer.cornerRadius = 8
+        nextButton.isEnabled = false
+        nextButton.setTitleColor(.gray, for: .disabled)
+        
+        bottomButtonView.addSubview(nextButton)
+        nextButton.snp.makeConstraints({ make in
+            make.right.equalToSuperview().inset(20)
+            make.top.bottom.equalToSuperview().inset(20)
+            make.width.equalToSuperview().dividedBy(2).offset(-30)
+        })
+    }
 }
 
 // MARK: - CollectionView Delegate,DataSource, FlowLayout
 
 extension OnboardingMultipleChoiceViewController {
+    // MARK: Delegate
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! OnboardingCell else { return }
+        
+        let cellSelectionType = SelectionType(string: cellData[page].cellText![indexPath.row])
+            cellsSelectedTypes.append(cellSelectionType)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! OnboardingCell else { return }
+        
+        let cellSelectionType = SelectionType(string: cellData[page].cellText![indexPath.row])
+        cellsSelectedTypes.removeAll(where: { $0 == cellSelectionType})
+    }
+    
     // MARK: DataSource
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -45,7 +119,7 @@ extension OnboardingMultipleChoiceViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return cellData[page].cellText!.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -53,7 +127,7 @@ extension OnboardingMultipleChoiceViewController {
         
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerIdentifier, for: indexPath) as! OnboardingHeaderView
 
-        headerView.text = "What debt do you have?"
+        headerView.text = cellData[page].question ?? ""
         headerView.backgroundColor = UIColor.white.withAlphaComponent(0.14)
 
         return headerView
@@ -62,7 +136,8 @@ extension OnboardingMultipleChoiceViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! OnboardingCell
         
-        cell.text = "text \(indexPath.section) \(indexPath.row)"
+        cell.text = cellData[page].cellText![indexPath.row]
+        cell.selectionType = SelectionType(string: cellData[page].cellText![indexPath.row])
         
         return cell
     }
@@ -80,7 +155,7 @@ extension OnboardingMultipleChoiceViewController {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 10, left: 0, bottom: 20, right: 0)
+        return UIEdgeInsets(top: 10, left: 0, bottom: 140, right: 0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -93,3 +168,32 @@ extension OnboardingMultipleChoiceViewController {
 }
 
 
+struct onboardingInfo {
+    var pageNumber: Int!
+    var dataType: DataType!
+    var categoryTitle: String?
+    var question: String?
+    var cellText: [String]?
+    var multipleSelectionTypes: [SelectionType]?
+}
+
+enum DataType {
+    case multipleChoice, multipleSelectionList, valuePicker, singleChoice, review
+}
+
+enum SelectionType {
+    case creditCard, studentLoan, autoHomeLoan, itemToSave
+    
+    init(string: String) {
+        switch string{
+        case "Credit Card":
+            self = .creditCard
+        case "Student Loans":
+            self = .studentLoan
+        case "Auto/Home Loans":
+            self = .autoHomeLoan
+        default:
+            self = .creditCard
+        }
+    }
+}

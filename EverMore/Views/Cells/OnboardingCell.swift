@@ -15,7 +15,16 @@ class OnboardingCell: UICollectionViewCell {
         }
     }
     
+    var selectionType: SelectionType?
+    
+    override var isSelected: Bool {
+        didSet {
+            checkmarkImageView.isHidden = !isSelected
+        }
+    }
+    
     private let label = UILabel()
+    private let checkmarkImageView = UIImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,6 +40,17 @@ class OnboardingCell: UICollectionViewCell {
         label.snp.makeConstraints({ make in
             make.width.equalToSuperview().multipliedBy(0.8)
             make.center.equalToSuperview()
+        })
+        
+        checkmarkImageView.image = UIImage(named: "checkmark-100")
+        checkmarkImageView.tintColor = .systemBlue
+        checkmarkImageView.isHidden = true
+        
+        self.addSubview(checkmarkImageView)
+        checkmarkImageView.snp.makeConstraints({ make in
+            make.width.height.equalTo(25)
+            make.right.equalToSuperview().inset(10)
+            make.centerY.equalToSuperview()
         })
     }
     
