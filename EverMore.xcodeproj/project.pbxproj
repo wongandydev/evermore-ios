@@ -1,0 +1,604 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A0FC4494245D3C9E00B1ADCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC4493245D3C9E00B1ADCA /* AppDelegate.swift */; };
+		A0FC4496245D3C9E00B1ADCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC4495245D3C9E00B1ADCA /* SceneDelegate.swift */; };
+		A0FC4498245D3C9E00B1ADCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC4497245D3C9E00B1ADCA /* ViewController.swift */; };
+		A0FC449E245D3C9E00B1ADCA /* EverMore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0FC449C245D3C9E00B1ADCA /* EverMore.xcdatamodeld */; };
+		A0FC44A0245D3C9F00B1ADCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0FC449F245D3C9F00B1ADCA /* Assets.xcassets */; };
+		A0FC44A3245D3C9F00B1ADCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0FC44A1245D3C9F00B1ADCA /* LaunchScreen.storyboard */; };
+		A0FC44AE245D3C9F00B1ADCA /* EverMoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC44AD245D3C9F00B1ADCA /* EverMoreTests.swift */; };
+		A0FC44B9245D3C9F00B1ADCA /* EverMoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC44B8245D3C9F00B1ADCA /* EverMoreUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A0FC44AA245D3C9F00B1ADCA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0FC4488245D3C9E00B1ADCA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0FC448F245D3C9E00B1ADCA;
+			remoteInfo = EverMore;
+		};
+		A0FC44B5245D3C9F00B1ADCA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A0FC4488245D3C9E00B1ADCA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0FC448F245D3C9E00B1ADCA;
+			remoteInfo = EverMore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A0FC4490245D3C9E00B1ADCA /* EverMore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverMore.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0FC4493245D3C9E00B1ADCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A0FC4495245D3C9E00B1ADCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A0FC4497245D3C9E00B1ADCA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A0FC449D245D3C9E00B1ADCA /* EverMore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EverMore.xcdatamodel; sourceTree = "<group>"; };
+		A0FC449F245D3C9F00B1ADCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A0FC44A2245D3C9F00B1ADCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A0FC44A4245D3C9F00B1ADCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0FC44A9245D3C9F00B1ADCA /* EverMoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EverMoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0FC44AD245D3C9F00B1ADCA /* EverMoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverMoreTests.swift; sourceTree = "<group>"; };
+		A0FC44AF245D3C9F00B1ADCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0FC44B4245D3C9F00B1ADCA /* EverMoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EverMoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0FC44B8245D3C9F00B1ADCA /* EverMoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverMoreUITests.swift; sourceTree = "<group>"; };
+		A0FC44BA245D3C9F00B1ADCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A0FC448D245D3C9E00B1ADCA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0FC44A6245D3C9F00B1ADCA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0FC44B1245D3C9F00B1ADCA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A0FC4487245D3C9E00B1ADCA = {
+			isa = PBXGroup;
+			children = (
+				A0FC4492245D3C9E00B1ADCA /* EverMore */,
+				A0FC44AC245D3C9F00B1ADCA /* EverMoreTests */,
+				A0FC44B7245D3C9F00B1ADCA /* EverMoreUITests */,
+				A0FC4491245D3C9E00B1ADCA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A0FC4491245D3C9E00B1ADCA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A0FC4490245D3C9E00B1ADCA /* EverMore.app */,
+				A0FC44A9245D3C9F00B1ADCA /* EverMoreTests.xctest */,
+				A0FC44B4245D3C9F00B1ADCA /* EverMoreUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A0FC4492245D3C9E00B1ADCA /* EverMore */ = {
+			isa = PBXGroup;
+			children = (
+				A0FC4493245D3C9E00B1ADCA /* AppDelegate.swift */,
+				A0FC4495245D3C9E00B1ADCA /* SceneDelegate.swift */,
+				A0FC4497245D3C9E00B1ADCA /* ViewController.swift */,
+				A0FC449F245D3C9F00B1ADCA /* Assets.xcassets */,
+				A0FC44A1245D3C9F00B1ADCA /* LaunchScreen.storyboard */,
+				A0FC44A4245D3C9F00B1ADCA /* Info.plist */,
+				A0FC449C245D3C9E00B1ADCA /* EverMore.xcdatamodeld */,
+			);
+			path = EverMore;
+			sourceTree = "<group>";
+		};
+		A0FC44AC245D3C9F00B1ADCA /* EverMoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				A0FC44AD245D3C9F00B1ADCA /* EverMoreTests.swift */,
+				A0FC44AF245D3C9F00B1ADCA /* Info.plist */,
+			);
+			path = EverMoreTests;
+			sourceTree = "<group>";
+		};
+		A0FC44B7245D3C9F00B1ADCA /* EverMoreUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A0FC44B8245D3C9F00B1ADCA /* EverMoreUITests.swift */,
+				A0FC44BA245D3C9F00B1ADCA /* Info.plist */,
+			);
+			path = EverMoreUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A0FC448F245D3C9E00B1ADCA /* EverMore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0FC44BD245D3C9F00B1ADCA /* Build configuration list for PBXNativeTarget "EverMore" */;
+			buildPhases = (
+				A0FC448C245D3C9E00B1ADCA /* Sources */,
+				A0FC448D245D3C9E00B1ADCA /* Frameworks */,
+				A0FC448E245D3C9E00B1ADCA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EverMore;
+			productName = EverMore;
+			productReference = A0FC4490245D3C9E00B1ADCA /* EverMore.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A0FC44A8245D3C9F00B1ADCA /* EverMoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0FC44C0245D3C9F00B1ADCA /* Build configuration list for PBXNativeTarget "EverMoreTests" */;
+			buildPhases = (
+				A0FC44A5245D3C9F00B1ADCA /* Sources */,
+				A0FC44A6245D3C9F00B1ADCA /* Frameworks */,
+				A0FC44A7245D3C9F00B1ADCA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A0FC44AB245D3C9F00B1ADCA /* PBXTargetDependency */,
+			);
+			name = EverMoreTests;
+			productName = EverMoreTests;
+			productReference = A0FC44A9245D3C9F00B1ADCA /* EverMoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A0FC44B3245D3C9F00B1ADCA /* EverMoreUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0FC44C3245D3C9F00B1ADCA /* Build configuration list for PBXNativeTarget "EverMoreUITests" */;
+			buildPhases = (
+				A0FC44B0245D3C9F00B1ADCA /* Sources */,
+				A0FC44B1245D3C9F00B1ADCA /* Frameworks */,
+				A0FC44B2245D3C9F00B1ADCA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A0FC44B6245D3C9F00B1ADCA /* PBXTargetDependency */,
+			);
+			name = EverMoreUITests;
+			productName = EverMoreUITests;
+			productReference = A0FC44B4245D3C9F00B1ADCA /* EverMoreUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A0FC4488245D3C9E00B1ADCA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Andy Wong";
+				TargetAttributes = {
+					A0FC448F245D3C9E00B1ADCA = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					A0FC44A8245D3C9F00B1ADCA = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = A0FC448F245D3C9E00B1ADCA;
+					};
+					A0FC44B3245D3C9F00B1ADCA = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = A0FC448F245D3C9E00B1ADCA;
+					};
+				};
+			};
+			buildConfigurationList = A0FC448B245D3C9E00B1ADCA /* Build configuration list for PBXProject "EverMore" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A0FC4487245D3C9E00B1ADCA;
+			productRefGroup = A0FC4491245D3C9E00B1ADCA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A0FC448F245D3C9E00B1ADCA /* EverMore */,
+				A0FC44A8245D3C9F00B1ADCA /* EverMoreTests */,
+				A0FC44B3245D3C9F00B1ADCA /* EverMoreUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A0FC448E245D3C9E00B1ADCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0FC44A3245D3C9F00B1ADCA /* LaunchScreen.storyboard in Resources */,
+				A0FC44A0245D3C9F00B1ADCA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0FC44A7245D3C9F00B1ADCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0FC44B2245D3C9F00B1ADCA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A0FC448C245D3C9E00B1ADCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0FC4498245D3C9E00B1ADCA /* ViewController.swift in Sources */,
+				A0FC4494245D3C9E00B1ADCA /* AppDelegate.swift in Sources */,
+				A0FC449E245D3C9E00B1ADCA /* EverMore.xcdatamodeld in Sources */,
+				A0FC4496245D3C9E00B1ADCA /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0FC44A5245D3C9F00B1ADCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0FC44AE245D3C9F00B1ADCA /* EverMoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0FC44B0245D3C9F00B1ADCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0FC44B9245D3C9F00B1ADCA /* EverMoreUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A0FC44AB245D3C9F00B1ADCA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0FC448F245D3C9E00B1ADCA /* EverMore */;
+			targetProxy = A0FC44AA245D3C9F00B1ADCA /* PBXContainerItemProxy */;
+		};
+		A0FC44B6245D3C9F00B1ADCA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0FC448F245D3C9E00B1ADCA /* EverMore */;
+			targetProxy = A0FC44B5245D3C9F00B1ADCA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A0FC44A1245D3C9F00B1ADCA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A0FC44A2245D3C9F00B1ADCA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A0FC44BB245D3C9F00B1ADCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A0FC44BC245D3C9F00B1ADCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A0FC44BE245D3C9F00B1ADCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EURL27CLKV;
+				INFOPLIST_FILE = EverMore/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andywong.EverMore1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A0FC44BF245D3C9F00B1ADCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EURL27CLKV;
+				INFOPLIST_FILE = EverMore/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.andywong.EverMore1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		A0FC44C1245D3C9F00B1ADCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EURL27CLKV;
+				INFOPLIST_FILE = EverMoreTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.andywong.EverMoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EverMore.app/EverMore";
+			};
+			name = Debug;
+		};
+		A0FC44C2245D3C9F00B1ADCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EURL27CLKV;
+				INFOPLIST_FILE = EverMoreTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.andywong.EverMoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EverMore.app/EverMore";
+			};
+			name = Release;
+		};
+		A0FC44C4245D3C9F00B1ADCA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EURL27CLKV;
+				INFOPLIST_FILE = EverMoreUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.andywong.EverMoreUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EverMore;
+			};
+			name = Debug;
+		};
+		A0FC44C5245D3C9F00B1ADCA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EURL27CLKV;
+				INFOPLIST_FILE = EverMoreUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.andywong.EverMoreUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EverMore;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A0FC448B245D3C9E00B1ADCA /* Build configuration list for PBXProject "EverMore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0FC44BB245D3C9F00B1ADCA /* Debug */,
+				A0FC44BC245D3C9F00B1ADCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A0FC44BD245D3C9F00B1ADCA /* Build configuration list for PBXNativeTarget "EverMore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0FC44BE245D3C9F00B1ADCA /* Debug */,
+				A0FC44BF245D3C9F00B1ADCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A0FC44C0245D3C9F00B1ADCA /* Build configuration list for PBXNativeTarget "EverMoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0FC44C1245D3C9F00B1ADCA /* Debug */,
+				A0FC44C2245D3C9F00B1ADCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A0FC44C3245D3C9F00B1ADCA /* Build configuration list for PBXNativeTarget "EverMoreUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0FC44C4245D3C9F00B1ADCA /* Debug */,
+				A0FC44C5245D3C9F00B1ADCA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A0FC449C245D3C9E00B1ADCA /* EverMore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A0FC449D245D3C9E00B1ADCA /* EverMore.xcdatamodel */,
+			);
+			currentVersion = A0FC449D245D3C9E00B1ADCA /* EverMore.xcdatamodel */;
+			path = EverMore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A0FC4488245D3C9E00B1ADCA /* Project object */;
+}
