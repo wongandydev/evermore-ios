@@ -26,7 +26,7 @@ class OnboardingMultipleChoiceViewController: UICollectionViewController, UIColl
     }
     
     var page: Int = 0
-    var cellData = [onboardingInfo(pageNumber: 0, dataType: .multipleChoice, categoryTitle: "Debt", question: "What debt do you owe right now?", cellText: ["Credit Card", "Student Loans", "Auto/Home Loans"], multipleSelectionTypes: nil)]
+    var cellData = [onboardingInfo(pageNumber: 0, dataType: .multipleChoice, categoryTitle: "Debt", question: "What debt do you owe right now?", cellText: ["Credit Card", "Student Loans", "Auto/Home Loans", "None"], multipleSelectionTypes: nil)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -182,7 +182,7 @@ enum DataType {
 }
 
 enum SelectionType {
-    case creditCard, studentLoan, autoHomeLoan, itemToSave
+    case creditCard, studentLoan, autoHomeLoan, itemToSave, null
     
     init(string: String) {
         switch string{
@@ -193,7 +193,8 @@ enum SelectionType {
         case "Auto/Home Loans":
             self = .autoHomeLoan
         default:
-            self = .creditCard
+            self = .null
         }
     }
 }
+
