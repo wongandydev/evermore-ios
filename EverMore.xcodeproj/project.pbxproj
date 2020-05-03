@@ -13,6 +13,7 @@
 		A0750D3C245E37B300194C15 /* ValuePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0750D3B245E37B300194C15 /* ValuePickerViewController.swift */; };
 		A0750D3E245E39C500194C15 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0750D3D245E39C500194C15 /* Extensions.swift */; };
 		A0750D40245E3AB300194C15 /* BottomBackNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0750D3F245E3AB300194C15 /* BottomBackNextView.swift */; };
+		A07BB41B245F19E200A9EBB2 /* MultipleSelectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07BB41A245F19E200A9EBB2 /* MultipleSelectionListViewController.swift */; };
 		A0B68CA9245D55A7002B6DED /* OnboardingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B68CA8245D55A7002B6DED /* OnboardingHeaderView.swift */; };
 		A0B68CAB245D55B6002B6DED /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B68CAA245D55B6002B6DED /* OnboardingCell.swift */; };
 		A0FC4494245D3C9E00B1ADCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC4493245D3C9E00B1ADCA /* AppDelegate.swift */; };
@@ -55,6 +56,7 @@
 		A0750D3B245E37B300194C15 /* ValuePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuePickerViewController.swift; sourceTree = "<group>"; };
 		A0750D3D245E39C500194C15 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A0750D3F245E3AB300194C15 /* BottomBackNextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBackNextView.swift; sourceTree = "<group>"; };
+		A07BB41A245F19E200A9EBB2 /* MultipleSelectionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionListViewController.swift; sourceTree = "<group>"; };
 		A0B68CA8245D55A7002B6DED /* OnboardingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingHeaderView.swift; sourceTree = "<group>"; };
 		A0B68CAA245D55B6002B6DED /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
 		A0FC4490245D3C9E00B1ADCA /* EverMore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverMore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +136,7 @@
 			children = (
 				A0FC44C6245D435800B1ADCA /* OnboardingMultipleChoiceVC.swift */,
 				A0750D3B245E37B300194C15 /* ValuePickerViewController.swift */,
+				A07BB41A245F19E200A9EBB2 /* MultipleSelectionListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				A0FC44C7245D435800B1ADCA /* OnboardingMultipleChoiceVC.swift in Sources */,
 				A0750D3E245E39C500194C15 /* Extensions.swift in Sources */,
 				A0FC4494245D3C9E00B1ADCA /* AppDelegate.swift in Sources */,
+				A07BB41B245F19E200A9EBB2 /* MultipleSelectionListViewController.swift in Sources */,
 				A0750D40245E3AB300194C15 /* BottomBackNextView.swift in Sources */,
 				A0B68CAB245D55B6002B6DED /* OnboardingCell.swift in Sources */,
 				A0B68CA9245D55A7002B6DED /* OnboardingHeaderView.swift in Sources */,

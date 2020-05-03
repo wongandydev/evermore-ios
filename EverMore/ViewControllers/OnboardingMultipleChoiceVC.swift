@@ -84,7 +84,19 @@ class OnboardingMultipleChoiceViewController: UICollectionViewController, UIColl
                 
                 self.navigationController?.pushViewController(nextVC, animated: true)
             } else {
-                showAlertMessage(title: "Coming Soon", message: "")
+                let nextVC = MultipleSelectionListViewController()
+                cellsSelectedTypes.forEach({ selectedType in
+                    nextVC.selectionData[selectedType] = [String:Int]()
+                })
+                
+                print(nextVC.selectionData)
+                
+                nextVC.page = page + 1
+                nextVC.cellData = cellData
+                
+                self.navigationController?.pushViewController(nextVC, animated: true)
+                
+                //showAlertMessage(title: "Coming Soon", message: "")
             }
         }
     }
@@ -121,8 +133,6 @@ extension OnboardingMultipleChoiceViewController {
         }
         
         cellsSelectedTypes.append(cellSelectionType)
-        print(cellsSelectedTypes)
-
     }
     
     override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
@@ -206,7 +216,9 @@ enum DataType {
     case multipleChoice, multipleSelectionList, valuePicker, singleChoice, review
 }
 
-enum SelectionType {
+enum SelectionType: String {
+    typealias RawValue = String
+    
     case creditCard, studentLoan, autoHomeLoan, itemToSave, null
     
     init(string: String) {
