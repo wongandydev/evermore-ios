@@ -7,54 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4E19823B-894E-497B-A08E-020FEA2FE7EC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "EverMore/ViewControllers/OnboardingMultipleChoiceVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "collectionView(_:didDeselectItemAt:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "4E19823B-894E-497B-A08E-020FEA2FE7EC - 24baf33e290ffb74"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "EverMore.OnboardingMultipleChoiceViewController.collectionView(_: __C.UICollectionView, didDeselectItemAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "EverMore"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andymbp/Documents/Development/EverMore/EverMore/ViewControllers/OnboardingMultipleChoiceVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "112"
-                  endingLineNumber = "112"
-                  offsetFromSymbolStart = "1408">
-               </Location>
-               <Location
-                  uuid = "4E19823B-894E-497B-A08E-020FEA2FE7EC - ca072d8c426bca8b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (EverMore.SelectionType) -&gt; Swift.Bool in EverMore.OnboardingMultipleChoiceViewController.collectionView(_: __C.UICollectionView, didDeselectItemAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "EverMore"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andymbp/Documents/Development/EverMore/EverMore/ViewControllers/OnboardingMultipleChoiceVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "112"
-                  endingLineNumber = "112"
-                  offsetFromSymbolStart = "32">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "3273E45C-6B51-4470-8DC8-720D04D9945A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -62,8 +14,8 @@
             filePath = "EverMore/ViewControllers/OnboardingMultipleChoiceVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +30,8 @@
             filePath = "EverMore/ViewControllers/OnboardingMultipleChoiceVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
             landmarkName = "collectionView(_:didDeselectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>

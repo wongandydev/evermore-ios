@@ -22,3 +22,18 @@ extension UIViewController {
         self.present(alertController, animated: true)
     }
 }
+
+extension UITextField {
+    func setDoneOnKeyboard() {
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissKeyboard))
+        keyboardToolbar.items = [flexBarButton, doneBarButton]
+        self.inputAccessoryView = keyboardToolbar
+    }
+
+    @objc func dismissKeyboard() {
+        self.resignFirstResponder()
+    }
+}

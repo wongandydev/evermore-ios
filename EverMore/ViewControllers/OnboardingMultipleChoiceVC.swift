@@ -30,6 +30,7 @@ class OnboardingMultipleChoiceViewController: UICollectionViewController, UIColl
     var page: Int = 0
     var cellData = [
         OnboardingInfo(pageNumber: 0, dataType: .multipleChoice, categoryTitle: "Debt", question: "What debt do you owe right now?", cellText: ["Credit Card", "Student Loans", "Auto/Home Loans", "None"], multipleSelectionTypes: nil),
+         OnboardingInfo(pageNumber: 1, dataType: .multipleSelectionList, categoryTitle: "Debt", question: nil, cellText: nil, multipleSelectionTypes: nil),
         OnboardingInfo(pageNumber: 2, dataType: .valuePicker, categoryTitle: "Salary", question: "How much do you make?", cellText: nil, multipleSelectionTypes: nil)]
     
     override func viewDidLoad() {
@@ -69,8 +70,6 @@ class OnboardingMultipleChoiceViewController: UICollectionViewController, UIColl
 
         bottomBackNextView.backButton.isEnabled = (page != 0)
         bottomBackNextView.nextButton.addTarget(self, action: #selector(nextButtonTapped(_:)), for: .touchUpInside)
-
-
     }
     
     // MARK: - Button Funcs
@@ -79,7 +78,7 @@ class OnboardingMultipleChoiceViewController: UICollectionViewController, UIColl
         if sender == bottomBackNextView.nextButton {
             if cellsSelectedTypes.contains(.null) {
                 let nextVC = ValuePickerViewController()
-                nextVC.page = page + 1
+                nextVC.page = page + 2
                 nextVC.cellData = cellData
                 
                 self.navigationController?.pushViewController(nextVC, animated: true)
@@ -88,8 +87,6 @@ class OnboardingMultipleChoiceViewController: UICollectionViewController, UIColl
                 cellsSelectedTypes.forEach({ selectedType in
                     nextVC.selectionData[selectedType] = [String:Int]()
                 })
-                
-                print(nextVC.selectionData)
                 
                 nextVC.page = page + 1
                 nextVC.cellData = cellData
