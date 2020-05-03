@@ -34,6 +34,7 @@ class MultipleSelectionListViewController: UIViewController {
         let stackView = UIStackView()
         stackView.alignment = .fill
         stackView.axis = .vertical
+        stackView.spacing = 20.0
         
         scrollView.addSubview(stackView)
         stackView.snp.makeConstraints({ make in
@@ -68,10 +69,7 @@ class MultipleSelectionListViewController: UIViewController {
             descriptionLabel.snp.makeConstraints({ make in
                 make.top.equalTo(debtTypeLabel.snp.bottom).offset(10)
                 make.centerX.equalToSuperview()
-                make.width.equalToSuperview().multipliedBy(0.8)
-                
-                
-            })
+                make.width.equalToSuperview().multipliedBy(0.8)            })
             
             let itemizedStackView = UIStackView()
             itemizedStackView.axis = .vertical
@@ -85,43 +83,71 @@ class MultipleSelectionListViewController: UIViewController {
                 make.bottom.equalToSuperview()
             })
             
-            let titles = ["Amount Owed", "APR", "Due Date", "w","s","ti"]
+            let item1StackView = UIStackView()
+            item1StackView.axis = .horizontal
             
-            for title in titles {
-                let itemStackView = UIStackView()
-                itemStackView.axis = .horizontal
-                
-                itemizedStackView.addArrangedSubview(itemStackView)
-                
-                let titleLabel = UILabel()
-                titleLabel.text = title
-                titleLabel.numberOfLines = 0
-                titleLabel.font = UIFont.systemFont(ofSize: 14)
-                
-                itemStackView.addArrangedSubview(titleLabel)
-                
-                if title != "Due Date" {
-                    let amountTextField = UITextField()
-                    amountTextField.keyboardType = .decimalPad
-                    amountTextField.borderStyle = .line
-                    amountTextField.setDoneOnKeyboard()
-                    
-                    itemStackView.addArrangedSubview(amountTextField)
-                    amountTextField.snp.makeConstraints({ make in
-                        make.width.equalToSuperview().dividedBy(3)
-                    })
-                } else {
-                    let dueDateTextField = UITextField()
-                    dueDateTextField.keyboardType = .numberPad
-                    dueDateTextField.borderStyle = .line
-                    dueDateTextField.setDoneOnKeyboard()
-                    
-                    itemStackView.addArrangedSubview(dueDateTextField)
-                    dueDateTextField.snp.makeConstraints({ make in
-                        make.width.equalToSuperview().dividedBy(3)
-                    })
-                }
-            }
+            itemizedStackView.addArrangedSubview(item1StackView)
+            
+            let amountTitleLabel = UILabel()
+            amountTitleLabel.text = "Amount Due"
+            amountTitleLabel.numberOfLines = 0
+            amountTitleLabel.font = UIFont.systemFont(ofSize: 14)
+            
+            item1StackView.addArrangedSubview(amountTitleLabel)
+            
+            let amountTextField = UITextField()
+            amountTextField.keyboardType = .decimalPad
+            amountTextField.borderStyle = .line
+            amountTextField.setDoneOnKeyboard()
+            
+            item1StackView.addArrangedSubview(amountTextField)
+            amountTextField.snp.makeConstraints({ make in
+                make.width.equalToSuperview().dividedBy(3)
+            })
+            
+            let item2StackView = UIStackView()
+            item2StackView.axis = .horizontal
+            
+            itemizedStackView.addArrangedSubview(item2StackView)
+            
+            let aprTitleLabel = UILabel()
+            aprTitleLabel.text = "APR"
+            aprTitleLabel.numberOfLines = 0
+            aprTitleLabel.font = UIFont.systemFont(ofSize: 14)
+            
+            item2StackView.addArrangedSubview(aprTitleLabel)
+            
+            let aprTextField = UITextField()
+            aprTextField.keyboardType = .decimalPad
+            aprTextField.borderStyle = .line
+            aprTextField.setDoneOnKeyboard()
+            
+            item2StackView.addArrangedSubview(aprTextField)
+            aprTextField.snp.makeConstraints({ make in
+                make.width.equalToSuperview().dividedBy(3)
+            })
+            
+            let item3StackView = UIStackView()
+            item3StackView.axis = .horizontal
+            
+            itemizedStackView.addArrangedSubview(item3StackView)
+            
+            let dueDateTitleLabel = UILabel()
+            dueDateTitleLabel.text = "Due Date"
+            dueDateTitleLabel.numberOfLines = 0
+            dueDateTitleLabel.font = UIFont.systemFont(ofSize: 14)
+            
+            item3StackView.addArrangedSubview(dueDateTitleLabel)
+            
+            let dueDateTextField = UITextField()
+            dueDateTextField.keyboardType = .numberPad
+            dueDateTextField.borderStyle = .line
+            dueDateTextField.setDoneOnKeyboard()
+            
+            item3StackView.addArrangedSubview(dueDateTextField)
+            dueDateTextField.snp.makeConstraints({ make in
+                make.width.equalToSuperview().dividedBy(3)
+            })
         }
         
         bottomBackNextView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
