@@ -34,7 +34,7 @@ class MultipleSelectionListViewController: UIViewController {
         let stackView = UIStackView()
         stackView.alignment = .fill
         stackView.axis = .vertical
-        stackView.spacing = 20.0
+        stackView.spacing = 20.0                                                                                           
         
         scrollView.addSubview(stackView)
         stackView.snp.makeConstraints({ make in
@@ -69,7 +69,8 @@ class MultipleSelectionListViewController: UIViewController {
             descriptionLabel.snp.makeConstraints({ make in
                 make.top.equalTo(debtTypeLabel.snp.bottom).offset(10)
                 make.centerX.equalToSuperview()
-                make.width.equalToSuperview().multipliedBy(0.8)            })
+                make.width.equalToSuperview().multipliedBy(0.8)
+            })
             
             let itemizedStackView = UIStackView()
             itemizedStackView.axis = .vertical

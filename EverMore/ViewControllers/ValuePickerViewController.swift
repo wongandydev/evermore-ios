@@ -9,6 +9,7 @@
 import UIKit
 
 class ValuePickerViewController: UIViewController {
+    var budget: Budget!
     var page: Int!
     var cellData: [OnboardingInfo]!
     

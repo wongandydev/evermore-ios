@@ -27,6 +27,7 @@ class OnboardingMultipleChoiceViewController: UICollectionViewController, UIColl
         }
     }
     
+    var budget = Budget()
     var page: Int = 0
     var cellData = [
         OnboardingInfo(pageNumber: 0, dataType: .multipleChoice, categoryTitle: "Debt", question: "What debt do you owe right now?", cellText: ["Credit Card", "Student Loans", "Auto/Home Loans", "None"], multipleSelectionTypes: nil),
@@ -80,16 +81,18 @@ class OnboardingMultipleChoiceViewController: UICollectionViewController, UIColl
                 let nextVC = ValuePickerViewController()
                 nextVC.page = page + 2
                 nextVC.cellData = cellData
+                nextVC.budget = budget
                 
                 self.navigationController?.pushViewController(nextVC, animated: true)
             } else {
-                let nextVC = MultipleSelectionListViewController()
-                cellsSelectedTypes.forEach({ selectedType in
-                    nextVC.selectionData[selectedType] = [String:Int]()
-                })
+                let nextVC = DebtOwedVC()//MultipleSelectionListViewController()
+//                cellsSelectedTypes.forEach({ selectedType in
+//                    nextVC.selectionData[selectedType] = [String:Int]()
+//                })
                 
                 nextVC.page = page + 1
                 nextVC.cellData = cellData
+                nextVC.budget = budget
                 
                 self.navigationController?.pushViewController(nextVC, animated: true)
                 
