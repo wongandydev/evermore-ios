@@ -18,7 +18,7 @@ class DebtOwedVC: UIViewController {
     
     private let bottomBackNextView = BottomBackNextView()
     private let amountTextField = UITextField()
-    private let dueDateTextField = UITextField()
+    private let dueDateDataPicker = UIDatePicker()
     
     
     override func viewDidLoad() {
@@ -97,13 +97,13 @@ class DebtOwedVC: UIViewController {
         
         item3StackView.addArrangedSubview(dueDateTitleLabel)
         
-        dueDateTextField.keyboardType = .numberPad
-        dueDateTextField.borderStyle = .line
-        dueDateTextField.setDoneOnKeyboard()
+        dueDateDataPicker.date = Date()
+        dueDateDataPicker.datePickerMode = .date
         
-        item3StackView.addArrangedSubview(dueDateTextField)
-        dueDateTextField.snp.makeConstraints({ make in
-            make.width.equalToSuperview().dividedBy(3)
+        itemizedStackView.addArrangedSubview(dueDateDataPicker)
+        dueDateDataPicker.snp.makeConstraints({ make in
+            make.width.equalToSuperview()
+            make.centerX.equalToSuperview()
         })
         
         bottomBackNextView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
@@ -117,18 +117,32 @@ class DebtOwedVC: UIViewController {
         })
 
         bottomBackNextView.backButton.isEnabled = (page != 0)
+        bottomBackNextView.nextButton.isEnabled = true
         bottomBackNextView.nextButton.addTarget(self, action: #selector(nextButtonTapped(_:)), for: .touchUpInside)
     }
     
-        // MARK: - Button Funcs
-        
-        @objc func nextButtonTapped(_ sender: UIButton) {
-            if sender == bottomBackNextView.nextButton {
-                if let amountText = amountTextField.text, let dueDateText = dueDateTextField.text {
+    // MARK: - Button Funcs
+    
+    @objc func nextButtonTapped(_ sender: UIButton) {
+        if sender == bottomBackNextView.nextButton {
+            if let amountText = amountTextField.text, !amountText.isEmpty {
+                let interval = dueDateDataPicker.date.timeIntervalSince1970
+                
+                if let amount = Double(amountText) {
+                    self.budget.debt = Debt(amount: amount, apr: nil, dueDate: interval)
+                    let nextVC = ValuePickerViewController()
+                    nextVC.page = page + 1
+                    nextVC.cellData = cellData
+                    nextVC.budget = budget
                     
+                    self.navigationController?.pushViewController(nextVC, animated: true)
                 } else {
-                    showAlertMessage(title: "Missing Information", message: "Please enter all information.")
+                    showAlertMessage(title: "Amount Error", message: "The number you entered was not valid.")
                 }
+                
+            } else {
+                showAlertMessage(title: "Missing Information", message: "Please enter all information.")
             }
         }
+    }
 }

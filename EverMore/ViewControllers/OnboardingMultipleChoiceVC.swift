@@ -30,9 +30,11 @@ class OnboardingMultipleChoiceViewController: UICollectionViewController, UIColl
     var budget = Budget()
     var page: Int = 0
     var cellData = [
-        OnboardingInfo(pageNumber: 0, dataType: .multipleChoice, categoryTitle: "Debt", question: "What debt do you owe right now?", cellText: ["Credit Card", "Student Loans", "Auto/Home Loans", "None"], multipleSelectionTypes: nil),
-         OnboardingInfo(pageNumber: 1, dataType: .multipleSelectionList, categoryTitle: "Debt", question: nil, cellText: nil, multipleSelectionTypes: nil),
-        OnboardingInfo(pageNumber: 2, dataType: .valuePicker, categoryTitle: "Salary", question: "How much do you make?", cellText: nil, multipleSelectionTypes: nil)]
+        
+        OnboardingInfo(pageNumber: 0, dataType: .multipleChoice, categoryTitle: "Debt", questions: ["What debt do you owe right now?"], cellText: ["Credit Card", "Student Loans", "Auto/Home Loans", "None"], multipleSelectionTypes: nil),
+        OnboardingInfo(pageNumber: 1, dataType: .multipleSelectionList, categoryTitle: "Debt", questions: nil, cellText: nil, multipleSelectionTypes: nil),
+        OnboardingInfo(pageNumber: 2, dataType: .valuePicker, categoryTitle: "Salary", questions: ["How much do you make?", "How often do you make this much?"], cellText: nil, multipleSelectionTypes: nil),
+        OnboardingInfo(pageNumber: 3, dataType: .valuePicker, categoryTitle: "Savings", questions: ["How much do you want to save?", "How often do you want to save this amount?"], cellText: nil, multipleSelectionTypes: nil)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -157,7 +159,7 @@ extension OnboardingMultipleChoiceViewController {
         
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerIdentifier, for: indexPath) as! OnboardingHeaderView
 
-        headerView.text = cellData[page].question ?? ""
+        headerView.text = cellData[page].questions?.first ?? ""
         headerView.backgroundColor = UIColor.white.withAlphaComponent(0.14)
 
         return headerView
@@ -207,7 +209,7 @@ struct OnboardingInfo {
     var pageNumber: Int!
     var dataType: DataType!
     var categoryTitle: String?
-    var question: String?
+    var questions: [String]?
     var cellText: [String]?
     var multipleSelectionTypes: [SelectionType]?
 }
