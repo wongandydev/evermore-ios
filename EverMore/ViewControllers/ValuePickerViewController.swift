@@ -20,6 +20,8 @@ class ValuePickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        
         setupViews()
     }
     
@@ -94,7 +96,14 @@ class ValuePickerViewController: UIViewController {
 
         bottomBackNextView.backButton.isEnabled = (page != 0)
         bottomBackNextView.nextButton.isEnabled = true
+        bottomBackNextView.backButton.addTarget(self, action: #selector(backButtonTapped(_:)), for: .touchUpInside)
         bottomBackNextView.nextButton.addTarget(self, action: #selector(nextButtonTapped(_:)), for: .touchUpInside)
+    }
+    
+    @objc func backButtonTapped(_ sender: UIButton) {
+        if sender == bottomBackNextView.backButton {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     @objc func nextButtonTapped(_ sender: UIButton) {
