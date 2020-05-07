@@ -16,6 +16,9 @@ class ReviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        budget.setGoal()
+        
         setupViews()
     }
     
@@ -100,6 +103,21 @@ class ReviewViewController: UIViewController {
         }
         
         savingsStack.addArrangedSubview(savingsLabel)
+        
+        if let goal = budget.goal {
+            let goalStack = UIStackView()
+            goalStack.axis = .horizontal
+            vStack.addArrangedSubview(goalStack)
+            
+            let goalText = UILabel()
+            goalText.text = "Goal: "
+            goalStack.addArrangedSubview(goalText)
+            
+            let goalLabel = UILabel()
+            goalLabel.text = "\(goal.interval) budget of: \(goal.amount.rounded())"
+            goalStack.addArrangedSubview(goalLabel)
+        }
+        
         
         bottomBackNextView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
         

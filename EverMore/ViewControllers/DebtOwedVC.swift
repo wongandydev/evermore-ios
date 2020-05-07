@@ -99,7 +99,7 @@ class DebtOwedVC: UIViewController {
         
         dueDateDatePicker.date = Date()
         dueDateDatePicker.datePickerMode = .date
-        dueDateDatePicker.minimumDate = Date()
+        dueDateDatePicker.minimumDate =  Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.date(byAdding: .month, value: 1, to: Date())!))
         
         itemizedStackView.addArrangedSubview(dueDateDatePicker)
         dueDateDatePicker.snp.makeConstraints({ make in
