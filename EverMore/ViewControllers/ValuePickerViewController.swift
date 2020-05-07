@@ -116,6 +116,11 @@ class ValuePickerViewController: UIViewController {
                         self.budget.savingGoal = Saving(amount: amount, interval: Intervals(freq[frequencyPicker.selectedRow(inComponent: 0)]))
                         //Go to review VC
                         print(budget)
+                        
+                        let nextVC = ReviewViewController()
+                        nextVC.budget = budget
+                        
+                        self.navigationController?.pushViewController(nextVC, animated: true)
                     }
                 } else {
                     showAlertMessage(title: "Amount Error", message: "The number you entered was not valid.")

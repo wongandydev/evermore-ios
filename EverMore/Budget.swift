@@ -15,13 +15,174 @@ struct Budget {
     
     var goal: Goal?
     
+    private func calculateGoalWithSameInterval(salary: Salary, saving: Saving) -> Goal {
+        let budget = salary.amount - saving.amount
+        if budget > 0 {
+            return Goal(amount: budget, interval: saving.interval)
+        } else {
+            //if savings amount is larger than salary, set amount to the salary based on interval
+            return Goal(amount: salary.amount, interval: saving.interval)
+        }
+    }
     
+    private func calculateGoalWithDifferentIntervals(salary: Salary, saving: Saving) -> Goal {
+        switch (salary.interval, saving.interval) {
+            case (.weekly, .daily):
+                let dailySalary = salary.amount / 6 - saving.amount
+                let dailyBudget = dailySalary - saving.amount
+                
+                if dailyBudget > 0 {
+                    return Goal(amount: dailyBudget, interval: saving.interval)
+                } else {
+                    //if savings amount is larger than salary, set amount to the salary based on interval
+                    return Goal(amount: dailySalary, interval: saving.interval)
+                }
+            case (.weekly, .bi_weekly):
+                let biweeklySalary = (2 * salary.amount)
+                let biweeklyBudget = biweeklySalary - saving.amount
+                if biweeklyBudget > 0 {
+                    return  Goal(amount: biweeklyBudget, interval: saving.interval)
+                } else {
+                    //if savings amount is larger than salary, set amount to the salary based on interval
+                    return Goal(amount: biweeklySalary, interval: saving.interval)
+                }
+            case (.weekly, .monthly):
+                let monthlySalary = 4 * salary.amount
+                let monthlyBudget = monthlySalary - saving.amount
+                if monthlyBudget > 0 {
+                    return Goal(amount: monthlyBudget, interval: saving.interval)
+                } else {
+                    //if savings amount is larger than salary, set amount to the salary based on interval
+                    return Goal(amount: monthlySalary, interval: saving.interval)
+                }
+            case (.daily, .weekly):
+                let weeklySalary = salary.amount * 7
+                let weeklyBudget = weeklySalary - saving.amount
+                if weeklyBudget > 0 {
+                    return Goal(amount: weeklyBudget, interval: saving.interval)
+                } else {
+                    //if savings amount is larger than salary, set amount to the salary based on interval
+                    return Goal(amount: weeklySalary, interval: saving.interval)
+                }
+            case (.daily, .bi_weekly):
+                let biweeklySalary = (salary.amount * 7) * 2
+                let biweeklyBudget = biweeklySalary - saving.amount
+                if biweeklyBudget > 0 {
+                    return Goal(amount: biweeklyBudget, interval: saving.interval)
+                } else {
+                    //if savings amount is larger than salary, set amount to the salary based on interval
+                    return Goal(amount: biweeklySalary, interval: saving.interval)
+                }
+            case (.daily, .monthly):
+                let monthlySalary = (salary.amount * 7) * 4
+                let monthlyBudget = monthlySalary - saving.amount
+                if monthlyBudget > 0 {
+                    return Goal(amount: monthlyBudget, interval: saving.interval)
+                } else {
+                    //if savings amount is larger than salary, set amount to the salary based on interval
+                    return Goal(amount: monthlySalary, interval: saving.interval)
+                }
+            case (.monthly, .daily):
+                let dailySalary = (salary.amount / 4) / 7
+                let dailyBudget = dailySalary - saving.amount
+                if dailyBudget > 0 {
+                    return Goal(amount: dailyBudget, interval: saving.interval)
+                } else {
+                    //if savings amount is larger than salary, set amount to the salary based on interval
+                    return Goal(amount: dailySalary, interval: saving.interval)
+                }
+            case (.monthly, .weekly):
+                let weeklySalary = salary.amount/4
+                let weeklyBudget = weeklySalary - saving.amount
+                if weeklyBudget > 0 {
+                    return Goal(amount: weeklyBudget, interval: saving.interval)
+                } else {
+                    //if savings amount is larger than salary, set amount to the salary based on interval
+                    return Goal(amount: weeklySalary, interval: saving.interval)
+                }
+            case (.monthly, .bi_weekly):
+                let biweeklySalary = (salary.amount / 4) * 2
+                let biweeklyBudget = biweeklySalary - saving.amount
+                if biweeklyBudget > 0 {
+                    return Goal(amount: biweeklyBudget, interval: saving.interval)
+                } else {
+                    //if savings amount is larger than salary, set amount to the salary based on interval
+                    return Goal(amount: biweeklySalary, interval: saving.interval)
+                }
+            default:
+                return calculateGoalWithSameInterval(salary: salary, saving: saving)
+        }
+    }
+    
+    mutating func setGoal() {
+        if let debt = self.debt {
+            let dueDate = Date(timeIntervalSince1970: debt.dueDate)
+            let monthsRemaining = abs(Date().months(from: Date(timeIntervalSince1970: debt.dueDate)))
+            let debtAmount = debt.amount
+            let debtDuePerMonth = debtAmount/Double(monthsRemaining)
+            if let salary = salary, let saving = savingGoal {
+                let result = calculateGoalWithDebt(debt: debtDuePerMonth, salary: salary, saving: saving)
+                if result.1 == nil {
+                    goal = result.0
+                } else {
+                    self.debt = nil
+                    goal = result.0
+                }
+            }
+        } else {
+            if let salary = salary, let saving = savingGoal {
+                let salaryInterval = salary.interval
+                let savingInterval = saving.interval
+                
+                if salaryInterval == savingInterval {
+                    goal = calculateGoalWithSameInterval(salary: salary, saving: saving)
+                } else {
+                    goal = calculateGoalWithDifferentIntervals(salary: salary, saving: saving)
+                }
+                
+            }
+        }
+    }
+    
+    func calculateGoalWithDebt(debt: Double, salary: Salary, saving: Saving) -> (Goal, String?) {
+        let goalBasedOnSalaryAndSaving = calculateGoalWithDifferentIntervals(salary: salary, saving: saving)
+        switch goalBasedOnSalaryAndSaving.interval {
+            case .daily:
+                let dailyDebtPayOff = (debt/4) / 7
+                if goalBasedOnSalaryAndSaving.amount > dailyDebtPayOff {
+                    return (Goal(amount: goalBasedOnSalaryAndSaving.amount - dailyDebtPayOff, interval: goalBasedOnSalaryAndSaving.interval), nil)
+                } else {
+                    return (goalBasedOnSalaryAndSaving, "debt too high")
+                }
+            case .weekly:
+                let weeklyDebtPayOff = debt/4
+                if goalBasedOnSalaryAndSaving.amount > weeklyDebtPayOff {
+                    return (Goal(amount: goalBasedOnSalaryAndSaving.amount - weeklyDebtPayOff, interval: goalBasedOnSalaryAndSaving.interval), nil)
+                } else {
+                    return (goalBasedOnSalaryAndSaving, "debt too high")
+                }
+            case .bi_weekly:
+                let biweeklyDebtPayOff = (debt/4) * 2
+                if goalBasedOnSalaryAndSaving.amount > biweeklyDebtPayOff {
+                    return (Goal(amount: goalBasedOnSalaryAndSaving.amount - biweeklyDebtPayOff, interval: goalBasedOnSalaryAndSaving.interval), nil)
+                } else {
+                    return (goalBasedOnSalaryAndSaving, "debt too high")
+                }
+            case .monthly:
+                let monthlyDebtPayOff = debt
+                if goalBasedOnSalaryAndSaving.amount > monthlyDebtPayOff {
+                    return (Goal(amount: goalBasedOnSalaryAndSaving.amount - monthlyDebtPayOff, interval: goalBasedOnSalaryAndSaving.interval), nil)
+                } else {
+                    return (goalBasedOnSalaryAndSaving, "debt too high")
+                }
+        }
+    }
 }
 
 struct Debt {
-    var amount: Double?
+    var amount: Double
     var apr: Double?
-    var dueDate: TimeInterval?
+    var dueDate: TimeInterval
 }
 
 class Salary: Igg {
@@ -80,12 +241,6 @@ enum Intervals: String {
     }
 }
 
-protocol IntervalDelegate {
-    func convertToDay()
-    func convertToWeek()
-    func convertToMonth()
-}
-
 class Igg {
     var amount: Double
     var interval: Intervals
@@ -131,3 +286,5 @@ class Igg {
         }
     }
 }
+
+

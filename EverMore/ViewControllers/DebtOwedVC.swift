@@ -18,7 +18,7 @@ class DebtOwedVC: UIViewController {
     
     private let bottomBackNextView = BottomBackNextView()
     private let amountTextField = UITextField()
-    private let dueDateDataPicker = UIDatePicker()
+    private let dueDateDatePicker = UIDatePicker()
     
     
     override func viewDidLoad() {
@@ -97,11 +97,12 @@ class DebtOwedVC: UIViewController {
         
         item3StackView.addArrangedSubview(dueDateTitleLabel)
         
-        dueDateDataPicker.date = Date()
-        dueDateDataPicker.datePickerMode = .date
+        dueDateDatePicker.date = Date()
+        dueDateDatePicker.datePickerMode = .date
+        dueDateDatePicker.minimumDate = Date()
         
-        itemizedStackView.addArrangedSubview(dueDateDataPicker)
-        dueDateDataPicker.snp.makeConstraints({ make in
+        itemizedStackView.addArrangedSubview(dueDateDatePicker)
+        dueDateDatePicker.snp.makeConstraints({ make in
             make.width.equalToSuperview()
             make.centerX.equalToSuperview()
         })
@@ -126,7 +127,7 @@ class DebtOwedVC: UIViewController {
     @objc func nextButtonTapped(_ sender: UIButton) {
         if sender == bottomBackNextView.nextButton {
             if let amountText = amountTextField.text, !amountText.isEmpty {
-                let interval = dueDateDataPicker.date.timeIntervalSince1970
+                let interval = dueDateDatePicker.date.timeIntervalSince1970
                 
                 if let amount = Double(amountText) {
                     self.budget.debt = Debt(amount: amount, apr: nil, dueDate: interval)
