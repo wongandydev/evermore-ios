@@ -159,6 +159,34 @@ class BudgetTest: XCTestCase {
         // Salary: Monthly Saving: Bi-Weekly
         
         // With Debt
+        
+        // too much debt
+        
+        // The first of the month, five months later
+        let dueDate = Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.date(byAdding: .month, value: 5, to: Date())!))
+        let dueDateInterval = dueDate!.timeIntervalSince1970
+        budget.debt = Debt(amount: 5000, apr: nil, dueDate: dueDateInterval)
+        budget.salary = Salary(amount: 1000, interval: .monthly)
+        budget.savingGoal = Saving(amount: 35, interval: .daily)
+            
+        budget.setGoal()
+        XCTAssertTrue(budget.goal?.amount == 0.71) // if too much debt, we display salary and savings goal
+        
+        // Debt and salary + saving goal is exactly right
+        budget.debt = Debt(amount: 5000, apr: nil, dueDate: dueDateInterval)
+        budget.salary = Salary(amount: 2000, interval: .monthly)
+        budget.savingGoal = Saving(amount: 250, interval: .weekly)
+            
+        budget.setGoal()
+        XCTAssertTrue(budget.goal?.amount == 250)
+        
+        // Salary is higher than debt and savings goal
+        budget.debt = Debt(amount: 5000, apr: nil, dueDate: dueDateInterval)
+        budget.salary = Salary(amount: 475, interval: .weekly)
+        budget.savingGoal = Saving(amount: 400, interval: .bi_weekly)
+            
+        budget.setGoal()
+        XCTAssertTrue(budget.goal?.amount == 50)
     }
     
     func testSavingGoalGreaterThanSalary() {
