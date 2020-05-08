@@ -25,7 +25,6 @@
 		A0FC449E245D3C9E00B1ADCA /* EverMore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0FC449C245D3C9E00B1ADCA /* EverMore.xcdatamodeld */; };
 		A0FC44A0245D3C9F00B1ADCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0FC449F245D3C9F00B1ADCA /* Assets.xcassets */; };
 		A0FC44A3245D3C9F00B1ADCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0FC44A1245D3C9F00B1ADCA /* LaunchScreen.storyboard */; };
-		A0FC44AE245D3C9F00B1ADCA /* EverMoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC44AD245D3C9F00B1ADCA /* EverMoreTests.swift */; };
 		A0FC44B9245D3C9F00B1ADCA /* EverMoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC44B8245D3C9F00B1ADCA /* EverMoreUITests.swift */; };
 		A0FC44C7245D435800B1ADCA /* OnboardingMultipleChoiceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC44C6245D435800B1ADCA /* OnboardingMultipleChoiceVC.swift */; };
 		C86218F138B07CE5CE6D297D /* Pods_EverMoreUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66E6358B98E129B8557F3011 /* Pods_EverMoreUITests.framework */; };
@@ -75,7 +74,6 @@
 		A0FC44A2245D3C9F00B1ADCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0FC44A4245D3C9F00B1ADCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0FC44A9245D3C9F00B1ADCA /* EverMoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EverMoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0FC44AD245D3C9F00B1ADCA /* EverMoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverMoreTests.swift; sourceTree = "<group>"; };
 		A0FC44AF245D3C9F00B1ADCA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0FC44B4245D3C9F00B1ADCA /* EverMoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EverMoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FC44B8245D3C9F00B1ADCA /* EverMoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverMoreUITests.swift; sourceTree = "<group>"; };
@@ -195,7 +193,6 @@
 			isa = PBXGroup;
 			children = (
 				A0403FD82465C26700A81462 /* Budget.swift */,
-				A0FC44AD245D3C9F00B1ADCA /* EverMoreTests.swift */,
 				A0FC44AF245D3C9F00B1ADCA /* Info.plist */,
 			);
 			path = EverMoreTests;
@@ -475,7 +472,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0403FD92465C26700A81462 /* Budget.swift in Sources */,
-				A0FC44AE245D3C9F00B1ADCA /* EverMoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

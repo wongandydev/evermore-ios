@@ -146,6 +146,7 @@ struct Budget {
             let dueDate = Date(timeIntervalSince1970: debt.dueDate)
             let toDate = Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Date()))!
             let monthsRemaining = abs(toDate.months(from: dueDate))
+            print(monthsRemaining)
             let debtAmount = debt.amount
             let debtDuePerMonth = debtAmount/Double(monthsRemaining)
             if let salary = salary, let saving = savingGoal {
