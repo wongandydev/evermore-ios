@@ -11,6 +11,7 @@
 		763F155EC2F93FE0A8AEF17E /* Pods_EverMoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66052AC8C6D66000B096E3CC /* Pods_EverMoreTests.framework */; };
 		A0385E4D2461D0A600A77848 /* DebtOwedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0385E4C2461D0A600A77848 /* DebtOwedVC.swift */; };
 		A0385E4F2461DA2F00A77848 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0385E4E2461DA2F00A77848 /* Budget.swift */; };
+		A0403FD92465C26700A81462 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0403FD82465C26700A81462 /* Budget.swift */; };
 		A04591F2245E049500ADEFFD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04591F1245E049500ADEFFD /* Constants.swift */; };
 		A0750D3C245E37B300194C15 /* ValuePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0750D3B245E37B300194C15 /* ValuePickerViewController.swift */; };
 		A0750D3E245E39C500194C15 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0750D3D245E39C500194C15 /* Extensions.swift */; };
@@ -57,6 +58,7 @@
 		94F8EFEDCDDAB8531583408A /* Pods-EverMoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverMoreTests.debug.xcconfig"; path = "Target Support Files/Pods-EverMoreTests/Pods-EverMoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A0385E4C2461D0A600A77848 /* DebtOwedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtOwedVC.swift; sourceTree = "<group>"; };
 		A0385E4E2461DA2F00A77848 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
+		A0403FD82465C26700A81462 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		A04591F1245E049500ADEFFD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A0750D3B245E37B300194C15 /* ValuePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuePickerViewController.swift; sourceTree = "<group>"; };
 		A0750D3D245E39C500194C15 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 		A0FC44AC245D3C9F00B1ADCA /* EverMoreTests */ = {
 			isa = PBXGroup;
 			children = (
+				A0403FD82465C26700A81462 /* Budget.swift */,
 				A0FC44AD245D3C9F00B1ADCA /* EverMoreTests.swift */,
 				A0FC44AF245D3C9F00B1ADCA /* Info.plist */,
 			);
@@ -471,6 +474,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0403FD92465C26700A81462 /* Budget.swift in Sources */,
 				A0FC44AE245D3C9F00B1ADCA /* EverMoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

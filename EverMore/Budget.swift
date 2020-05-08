@@ -214,9 +214,6 @@ struct Debt {
 }
 
 class Salary: Igg {
-//    var amount: Double
-//    var interval: Intervals
-    
     override init(amount: Double, interval: Intervals) {
         super.init(amount: amount, interval: interval)
         self.amount = amount
@@ -227,9 +224,6 @@ class Salary: Igg {
 
 
 class Saving: Igg {
-//    var amount: Double
-//    var interval: Intervals
-    
     override init(amount: Double, interval: Intervals) {
         super.init(amount: amount, interval: interval)
         self.amount = amount
@@ -238,12 +232,9 @@ class Saving: Igg {
 }
 
 class Goal: Igg {
-//    var amount: Int
-//    var interval: Intervals
-    
     override init(amount: Double, interval: Intervals) {
         super.init(amount: amount, interval: interval)
-        self.amount = amount
+        self.amount = (amount * 100).rounded()/100
         self.interval = interval
     }
 }
