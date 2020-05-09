@@ -20,10 +20,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowScene)
-        let navVC = UINavigationController(rootViewController: OnboardingMultipleChoiceViewController(collectionViewLayout: UICollectionViewFlowLayout()))
-        window.rootViewController = navVC
-        self.window = window
-        window.makeKeyAndVisible()
+        
+        var viewController: UIViewController = OnboardingMultipleChoiceViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        
+        let onboardingCompleted = UserDefaults.standard.bool(forKey: Constants.defaultScreenerCompleted)
+        
+        if onboardingCompleted {
+            viewController = TabBarController()
+        }
+        
+        if viewController is TabBarController {
+            window.rootViewController = viewController
+            self.window = window
+            window.makeKeyAndVisible()
+        } else {
+            let navVC = UINavigationController(rootViewController: viewController)
+            window.rootViewController = navVC
+            self.window = window
+            window.makeKeyAndVisible()
+            
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

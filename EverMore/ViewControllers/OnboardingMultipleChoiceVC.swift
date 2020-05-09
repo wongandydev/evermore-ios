@@ -27,7 +27,7 @@ class OnboardingMultipleChoiceViewController: UICollectionViewController, UIColl
         }
     }
     
-    var budget = Budget()
+    var budget = BudgetManager.get()
     var page: Int = 0
     var cellData = [
         
@@ -83,7 +83,8 @@ class OnboardingMultipleChoiceViewController: UICollectionViewController, UIColl
                 let nextVC = ValuePickerViewController()
                 nextVC.page = page + 2
                 nextVC.cellData = cellData
-                nextVC.budget = budget
+                
+                BudgetManager.save(self.budget)
                 
                 self.navigationController?.pushViewController(nextVC, animated: true)
             } else {
@@ -94,7 +95,8 @@ class OnboardingMultipleChoiceViewController: UICollectionViewController, UIColl
                 
                 nextVC.page = page + 1
                 nextVC.cellData = cellData
-                nextVC.budget = budget
+                
+                BudgetManager.save(self.budget)
                 
                 self.navigationController?.pushViewController(nextVC, animated: true)
                 

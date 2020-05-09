@@ -44,4 +44,9 @@ struct Constants {
         if (50*Constants.typeScale > 50.0) { return 50.0 }
         else { return 50.0*Constants.typeScale }
     }
+    
+    // UserDefault keys
+    
+    static let defaultBudget = "budget"
+    static let defaultScreenerCompleted = "screenerCompleted"
 }

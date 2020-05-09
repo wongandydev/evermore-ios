@@ -17,9 +17,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         window = UIWindow()
-        let navVC = UINavigationController(rootViewController: OnboardingMultipleChoiceViewController(collectionViewLayout: UICollectionViewFlowLayout()))
-        window?.rootViewController = navVC
-        window?.makeKeyAndVisible()
+        var viewController: UIViewController = OnboardingMultipleChoiceViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        
+        let onboardingCompleted = UserDefaults.standard.bool(forKey: Constants.defaultScreenerCompleted)
+        if onboardingCompleted {
+            viewController = TabBarController()
+        }
+        
+        if viewController is TabBarController {
+            window?.rootViewController = viewController
+            window?.makeKeyAndVisible()
+        } else {
+            let navVC = UINavigationController(rootViewController: viewController)
+            window?.rootViewController = navVC
+            window?.makeKeyAndVisible()
+        }
         
         return true
     }

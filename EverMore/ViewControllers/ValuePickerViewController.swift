@@ -9,7 +9,7 @@
 import UIKit
 
 class ValuePickerViewController: UIViewController {
-    var budget: Budget!
+    var budget: Budget = BudgetManager.get()
     var page: Int!
     var cellData: [OnboardingInfo]!
     
@@ -112,22 +112,20 @@ class ValuePickerViewController: UIViewController {
                 if let amount = Double(amountText) {
                     if cellData[page].categoryTitle == "Salary" {
                         self.budget.salary = Salary(amount: amount, interval: Intervals(freq[frequencyPicker.selectedRow(inComponent: 0)]))
-                        // Go to savings VC
+                        BudgetManager.save(self.budget)
+                        
                         let nextVC = ValuePickerViewController()
                         nextVC.page = page + 1
                         nextVC.cellData = cellData
-                        nextVC.budget = budget
                         
-                        print(budget)
                         
                         self.navigationController?.pushViewController(nextVC, animated: true)
                     } else if cellData[page].categoryTitle == "Savings" {
                         self.budget.savingGoal = Saving(amount: amount, interval: Intervals(freq[frequencyPicker.selectedRow(inComponent: 0)]))
-                        //Go to review VC
-                        print(budget)
+                        BudgetManager.save(self.budget)
+                        UserDefaults.standard.set(true, forKey: Constants.defaultScreenerCompleted)
                         
-                        let nextVC = ReviewViewController()
-                        nextVC.budget = budget
+                        let nextVC = TabBarController()
                         
                         self.navigationController?.pushViewController(nextVC, animated: true)
                     }

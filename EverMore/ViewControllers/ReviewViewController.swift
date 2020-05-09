@@ -9,7 +9,7 @@
 import UIKit
 
 class ReviewViewController: UIViewController {
-    var budget: Budget!
+    var budget: Budget = BudgetManager.get()
     
     private let bottomBackNextView = BottomBackNextView()
     
@@ -18,6 +18,8 @@ class ReviewViewController: UIViewController {
         super.viewDidLoad()
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         budget.setGoal()
+        
+        print(budget)
         
         setupViews()
     }

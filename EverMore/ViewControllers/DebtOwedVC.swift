@@ -12,7 +12,7 @@ import UIKit
 // This is the replacement VC for now as we slowly figure out how to add all the debt into one model for calculation in the future perhaps as a premium feature
 
 class DebtOwedVC: UIViewController {
-    var budget: Budget!
+    var budget: Budget = BudgetManager.get()
     var page: Int!
     var cellData: [OnboardingInfo]!
     
@@ -140,10 +140,11 @@ class DebtOwedVC: UIViewController {
                 
                 if let amount = Double(amountText) {
                     self.budget.debt = Debt(amount: amount, apr: nil, dueDate: interval)
+                    BudgetManager.save(self.budget)
+                    
                     let nextVC = ValuePickerViewController()
                     nextVC.page = page + 1
                     nextVC.cellData = cellData
-                    nextVC.budget = budget
                     
                     self.navigationController?.pushViewController(nextVC, animated: true)
                 } else {

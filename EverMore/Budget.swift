@@ -8,12 +8,65 @@
 
 import UIKit
 
+class BudgetManager {
+    static func save(_ budget: Budget) {
+        // save budget
+        let jsonEncoder = JSONEncoder()
+        
+        if let savedData = try? jsonEncoder.encode(budget) {
+            UserDefaults.standard.set(savedData, forKey: Constants.defaultBudget)
+        } else {
+            print("failed to save budget")
+        }
+    }
+    
+    static func get() -> Budget {
+        if let savedBudget = UserDefaults.standard.object(forKey: Constants.defaultBudget) as? Data {
+            let jsonDecoder = JSONDecoder()
+            do {
+                if let budget = try? jsonDecoder.decode(Budget.self, from: savedBudget) {
+                    return budget
+                } else {
+                    return Budget(debt: nil, salary: nil, savingGoal: nil, goal: nil)
+                }
+            } catch {
+                print("failed to get budget")
+                return Budget(debt: nil, salary: nil, savingGoal: nil, goal: nil)
+            }
+        }
+        
+        return Budget(debt: nil, salary: nil, savingGoal: nil, goal: nil)
+    }
+}
+
 struct Budget: Codable {
     var debt: Debt?
     var salary: Salary?
     var savingGoal: Saving?
     
     var goal: Goal?
+    
+//    enum BudgetCodingKeys: String, CodingKey {
+//        case debt, salary, savingGoal, goal
+//    }
+    
+//    init(from decoder: Decoder) throws {
+//        let values = try decoder.container(keyedBy: BudgetCodingKeys.self)
+//
+//        debt = try values.decode(Debt.self, forKey: .debt)
+//        salary = try values.decode(Salary.self, forKey: .salary)
+//        savingGoal = try values.decode(Saving.self, forKey: .savingGoal)
+//        goal = try values.decode(Goal.self, forKey: .goal)
+//    }
+//
+//    func encode(to encoder: Encoder) throws {
+//        var container = encoder.container(keyedBy: BudgetCodingKeys.self)
+//
+//        try container.encode(debt, forKey: .debt)
+//        try container.encode(salary, forKey: .salary)
+//        try container.encode(savingGoal, forKey: .savingGoal)
+//        try container.encode(goal, forKey: .goal)
+//    }
     
     private func calculateGoalWithSameInterval(salary: Salary, saving: Saving) -> Goal {
         let budget = salary.amount - saving.amount
@@ -211,44 +264,41 @@ struct Debt: Codable {
     var amount: Double
     var apr: Double?
     var dueDate: TimeInterval
+    
+//    enum DebtCodingKeys: String, CodingKey {
+//        case amount, apr, dueDate
+//    }
+//
+//    init(from decoder: Decoder) throws {
+//        let values = try decoder.container(keyedBy: DebtCodingKeys.self)
+//
+//        amount = try values.decode(Double.self, forKey: .amount)
+//        apr = try values.decode(Double.self, forKey: .apr)
+//        dueDate = try values.decode(TimeInterval.self, forKey: .dueDate)
+//    }
+//
+//    func encode(to encoder: Encoder) throws {
+//        var container = encoder.container(keyedBy: DebtCodingKeys.self)
+//
+//        try container.encode(amount, forKey: .amount)
+//        try container.encode(apr, forKey: .apr)
+//        try container.encode(dueDate, forKey: .dueDate)
+//    }
 }
 
-class Salary: Igg {
-    override init(amount: Double, interval: Intervals) {
-        super.init(amount: amount, interval: interval)
-        self.amount = amount
-        self.interval = interval
-    }
-    
-    required init(from decoder: Decoder) throws {
-        fatalError("init(from:) has not been implemented")
-    }
+struct Salary: Codable {
+    var amount: Double
+    var interval: Intervals
 }
 
-
-
-class Saving: Igg {
-    override init(amount: Double, interval: Intervals) {
-        super.init(amount: amount, interval: interval)
-        self.amount = amount
-        self.interval = interval
-    }
-    
-    required init(from decoder: Decoder) throws {
-        fatalError("init(from:) has not been implemented")
-    }
+struct Saving: Codable {
+    var amount: Double
+    var interval: Intervals
 }
 
-class Goal: Igg {
-    override init(amount: Double, interval: Intervals) {
-        super.init(amount: amount, interval: interval)
-        self.amount = (amount * 100).rounded()/100
-        self.interval = interval
-    }
-    
-    required init(from decoder: Decoder) throws {
-        fatalError("init(from:) has not been implemented")
-    }
+struct Goal: Codable{
+    var amount: Double
+    var interval: Intervals
 }
 
 enum Intervals: String, Codable {
@@ -271,55 +321,4 @@ enum Intervals: String, Codable {
         }
     }
 }
-
-class Igg: Codable {
-    var amount: Double
-    var interval: Intervals
-    
-    init(amount: Double, interval: Intervals) {
-        self.amount = amount
-        self.interval = interval
-    }
-    
-    enum IggCodingKeys: String, CodingKey {
-        case amount, interval
-    }
-    
-    func convertToDay() {
-        if interval == .weekly {
-            amount = amount/7
-            interval = .daily
-        } else if interval == .monthly {
-            amount = amount/30
-            interval = .daily
-        } else {
-            // do nothing since that means we are converting day to day
-        }
-    }
-    
-    func convertToWeek() {
-        if interval == .monthly {
-            amount = amount/4
-            interval = .weekly
-        } else if interval == .daily {
-            amount = amount*7
-            interval = .weekly
-        } else {
-            // do nothing since that means we are converting week to week
-        }
-    }
-    
-    func convertToMonth() {
-        if interval == .weekly {
-            amount = amount*4
-            interval = .monthly
-        } else if interval == .daily {
-            amount = amount*30
-            interval = .monthly
-        } else {
-            // do nothing since that means we are converting month to month
-        }
-    }
-}
-
 

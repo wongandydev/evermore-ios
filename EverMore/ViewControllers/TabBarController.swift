@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TabBarControlller: UITabBarController {
+class TabBarController: UITabBarController {
     let firstVC = HomeViewController()
     let secondVC = ReviewViewController()
     
