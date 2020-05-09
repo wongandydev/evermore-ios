@@ -145,21 +145,56 @@ class BudgetTest: XCTestCase {
         XCTAssertTrue(budget.goal?.amount == 1000)
         
         // Salary: Weekly Saving: Monthly
+        budget.salary = Salary(amount: 1000, interval: .weekly)
+        budget.savingGoal = Saving(amount: 2000, interval: .monthly)
+        
+        budget.setGoal()
+        XCTAssertTrue(budget.goal?.amount == 2000)
         
         // Salary: Bi-Weekly Saving: Daily
+        budget.salary = Salary(amount: 1000, interval: .bi_weekly)
+        budget.savingGoal = Saving(amount: 50, interval: .daily)
+        
+        budget.setGoal()
+        XCTAssertTrue(budget.goal?.amount == 21.43)
         
         // Salary: Bi-Weekly Saving: Weekly
+        budget.salary = Salary(amount: 1000, interval: .bi_weekly)
+        budget.savingGoal = Saving(amount: 400, interval: .weekly)
+        
+        budget.setGoal()
+        XCTAssertTrue(budget.goal?.amount == 100)
         
         // Salary: Bi-Weekly Saving: Monthly
+        budget.salary = Salary(amount: 1000, interval: .bi_weekly)
+        budget.savingGoal = Saving(amount: 1000, interval: .monthly)
+        
+        budget.setGoal()
+        XCTAssertTrue(budget.goal?.amount == 1000)
         
         // Salary: Monthly Saving: Daily
+        budget.salary = Salary(amount: 3000, interval: .monthly)
+        budget.savingGoal = Saving(amount: 100, interval: .daily)
+        
+        budget.setGoal()
+        XCTAssertTrue(budget.goal?.amount == 7.14)
         
         // Salary: Monthly Saving: Weekly
+        budget.salary = Salary(amount: 3000, interval: .monthly)
+        budget.savingGoal = Saving(amount: 370, interval: .weekly)
+        
+        budget.setGoal()
+        XCTAssertTrue(budget.goal?.amount == 380)
         
         // Salary: Monthly Saving: Bi-Weekly
+        budget.salary = Salary(amount: 3000, interval: .monthly)
+        budget.savingGoal = Saving(amount: 700, interval: .bi_weekly)
+        
+        budget.setGoal()
+        XCTAssertTrue(budget.goal?.amount == 800)
+        
         
         // With Debt
-        
         // too much debt
         
         // The first of the month, five months later
