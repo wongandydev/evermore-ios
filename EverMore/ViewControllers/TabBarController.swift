@@ -9,5 +9,18 @@
 import UIKit
 
 class TabBarControlller: UITabBarController {
+    let firstVC = HomeViewController()
+    let secondVC = ReviewViewController()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        firstVC.tabBarItem = UITabBarItem(title: "Home", image: nil, selectedImage: nil)
+        secondVC.tabBarItem = UITabBarItem(title: "Budget", image: nil, selectedImage: nil)
+        
+        viewControllers = [firstVC, secondVC]
+        
+        self.tabBar.barStyle = .default
+        self.tabBar.tintColor = .green
+    }
 }

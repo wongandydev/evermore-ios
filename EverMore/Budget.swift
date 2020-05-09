@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Budget {
+struct Budget: Codable {
     var debt: Debt?
     var salary: Salary?
     var savingGoal: Saving?
@@ -207,7 +207,7 @@ struct Budget {
     }
 }
 
-struct Debt {
+struct Debt: Codable {
     var amount: Double
     var apr: Double?
     var dueDate: TimeInterval
@@ -219,6 +219,10 @@ class Salary: Igg {
         self.amount = amount
         self.interval = interval
     }
+    
+    required init(from decoder: Decoder) throws {
+        fatalError("init(from:) has not been implemented")
+    }
 }
 
 
@@ -229,6 +233,10 @@ class Saving: Igg {
         self.amount = amount
         self.interval = interval
     }
+    
+    required init(from decoder: Decoder) throws {
+        fatalError("init(from:) has not been implemented")
+    }
 }
 
 class Goal: Igg {
@@ -237,9 +245,13 @@ class Goal: Igg {
         self.amount = (amount * 100).rounded()/100
         self.interval = interval
     }
+    
+    required init(from decoder: Decoder) throws {
+        fatalError("init(from:) has not been implemented")
+    }
 }
 
-enum Intervals: String {
+enum Intervals: String, Codable {
     typealias RawValue = String
     
     case daily, weekly, bi_weekly, monthly
@@ -260,13 +272,17 @@ enum Intervals: String {
     }
 }
 
-class Igg {
+class Igg: Codable {
     var amount: Double
     var interval: Intervals
     
     init(amount: Double, interval: Intervals) {
         self.amount = amount
         self.interval = interval
+    }
+    
+    enum IggCodingKeys: String, CodingKey {
+        case amount, interval
     }
     
     func convertToDay() {

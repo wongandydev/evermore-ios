@@ -10,6 +10,7 @@
 		491411E921D9DF18337B3015 /* Pods_EverMore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04AABC6B61D28F4E8FD95CDE /* Pods_EverMore.framework */; };
 		763F155EC2F93FE0A8AEF17E /* Pods_EverMoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66052AC8C6D66000B096E3CC /* Pods_EverMoreTests.framework */; };
 		A0019B2A246712A60061BBF5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0019B29246712A60061BBF5 /* TabBarController.swift */; };
+		A0019B2C246712F00061BBF5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0019B2B246712F00061BBF5 /* HomeViewController.swift */; };
 		A0385E4D2461D0A600A77848 /* DebtOwedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0385E4C2461D0A600A77848 /* DebtOwedVC.swift */; };
 		A0385E4F2461DA2F00A77848 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0385E4E2461DA2F00A77848 /* Budget.swift */; };
 		A0403FD92465C26700A81462 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0403FD82465C26700A81462 /* Budget.swift */; };
@@ -57,6 +58,7 @@
 		66E6358B98E129B8557F3011 /* Pods_EverMoreUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverMoreUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94F8EFEDCDDAB8531583408A /* Pods-EverMoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverMoreTests.debug.xcconfig"; path = "Target Support Files/Pods-EverMoreTests/Pods-EverMoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A0019B29246712A60061BBF5 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		A0019B2B246712F00061BBF5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A0385E4C2461D0A600A77848 /* DebtOwedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtOwedVC.swift; sourceTree = "<group>"; };
 		A0385E4E2461DA2F00A77848 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		A0403FD82465C26700A81462 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				A0385E4C2461D0A600A77848 /* DebtOwedVC.swift */,
 				A09D436C24647D5A00ABFAEC /* ReviewViewController.swift */,
 				A0019B29246712A60061BBF5 /* TabBarController.swift */,
+				A0019B2B246712F00061BBF5 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				A0385E4F2461DA2F00A77848 /* Budget.swift in Sources */,
 				A0B68CA9245D55A7002B6DED /* OnboardingHeaderView.swift in Sources */,
 				A0750D3C245E37B300194C15 /* ValuePickerViewController.swift in Sources */,
+				A0019B2C246712F00061BBF5 /* HomeViewController.swift in Sources */,
 				A04591F2245E049500ADEFFD /* Constants.swift in Sources */,
 				A0FC449E245D3C9E00B1ADCA /* EverMore.xcdatamodeld in Sources */,
 				A0019B2A246712A60061BBF5 /* TabBarController.swift in Sources */,
