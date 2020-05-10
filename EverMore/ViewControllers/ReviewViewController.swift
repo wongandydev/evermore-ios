@@ -11,15 +11,12 @@ import UIKit
 class ReviewViewController: UIViewController {
     var budget: Budget = BudgetManager.get()
     
-    private let bottomBackNextView = BottomBackNextView()
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        budget.setGoal()
         
-        print(budget)
+        if budget.goal == nil {
+            budget.setGoal()
+        }
         
         setupViews()
     }
@@ -116,38 +113,8 @@ class ReviewViewController: UIViewController {
             goalStack.addArrangedSubview(goalText)
             
             let goalLabel = UILabel()
-            goalLabel.text = "\(goal.interval) budget of: \(goal.amount.rounded())"
+            goalLabel.text = "\(goal.interval) budget of: \(goal.amount)"
             goalStack.addArrangedSubview(goalLabel)
-        }
-        
-        
-        bottomBackNextView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
-        
-        self.view.addSubview(bottomBackNextView)
-        bottomBackNextView.snp.makeConstraints({ make in
-            make.width.equalToSuperview()
-            make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview()
-            make.height.equalTo(110)
-        })
-
-        bottomBackNextView.backButton.isEnabled = true
-        bottomBackNextView.nextButton.isEnabled = true
-        bottomBackNextView.backButton.addTarget(self, action: #selector(backButtonTapped(_:)), for: .touchUpInside)
-        bottomBackNextView.nextButton.addTarget(self, action: #selector(nextButtonTapped(_:)), for: .touchUpInside)
-    }
-    
-    // MARK: - Button Funcs
-    
-    @objc func backButtonTapped(_ sender: UIButton) {
-        if sender == bottomBackNextView.backButton {
-            self.navigationController?.popViewController(animated: true)
-        }
-    }
-    
-    @objc func nextButtonTapped(_ sender: UIButton) {
-        if sender == bottomBackNextView.nextButton {
-            showAlertMessage(title: "Coming Soon", message: "Soon after you finish these questions you can start adding information like your what you bought to make sure you are on budget")
         }
     }
 }

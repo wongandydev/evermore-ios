@@ -22,5 +22,6 @@ class TabBarController: UITabBarController {
         
         self.tabBar.barStyle = .default
         self.tabBar.tintColor = .green
+        self.tabBar.isTranslucent = false
     }
 }

@@ -46,28 +46,6 @@ struct Budget: Codable {
     
     var goal: Goal?
     
-//    enum BudgetCodingKeys: String, CodingKey {
-//        case debt, salary, savingGoal, goal
-//    }
-    
-//    init(from decoder: Decoder) throws {
-//        let values = try decoder.container(keyedBy: BudgetCodingKeys.self)
-//
-//        debt = try values.decode(Debt.self, forKey: .debt)
-//        salary = try values.decode(Salary.self, forKey: .salary)
-//        savingGoal = try values.decode(Saving.self, forKey: .savingGoal)
-//        goal = try values.decode(Goal.self, forKey: .goal)
-//    }
-//
-//    func encode(to encoder: Encoder) throws {
-//        var container = encoder.container(keyedBy: BudgetCodingKeys.self)
-//
-//        try container.encode(debt, forKey: .debt)
-//        try container.encode(salary, forKey: .salary)
-//        try container.encode(savingGoal, forKey: .savingGoal)
-//        try container.encode(goal, forKey: .goal)
-//    }
-    
     private func calculateGoalWithSameInterval(salary: Salary, saving: Saving) -> Goal {
         let budget = salary.amount - saving.amount
         if budget > 0 {
@@ -265,40 +243,41 @@ struct Debt: Codable {
     var apr: Double?
     var dueDate: TimeInterval
     
-//    enum DebtCodingKeys: String, CodingKey {
-//        case amount, apr, dueDate
-//    }
-//
-//    init(from decoder: Decoder) throws {
-//        let values = try decoder.container(keyedBy: DebtCodingKeys.self)
-//
-//        amount = try values.decode(Double.self, forKey: .amount)
-//        apr = try values.decode(Double.self, forKey: .apr)
-//        dueDate = try values.decode(TimeInterval.self, forKey: .dueDate)
-//    }
-//
-//    func encode(to encoder: Encoder) throws {
-//        var container = encoder.container(keyedBy: DebtCodingKeys.self)
-//
-//        try container.encode(amount, forKey: .amount)
-//        try container.encode(apr, forKey: .apr)
-//        try container.encode(dueDate, forKey: .dueDate)
-//    }
+    init(amount: Double, apr: Double?, dueDate: TimeInterval) {
+        self.amount = (amount * 100).rounded()/100
+        self.apr = apr
+        self.dueDate = dueDate
+    }
 }
 
 struct Salary: Codable {
     var amount: Double
     var interval: Intervals
+    
+    init(amount: Double, interval: Intervals) {
+        self.amount = (amount * 100).rounded()/100
+        self.interval = interval
+    }
 }
 
 struct Saving: Codable {
     var amount: Double
     var interval: Intervals
+    
+    init(amount: Double, interval: Intervals) {
+        self.amount = (amount * 100).rounded()/100
+        self.interval = interval
+    }
 }
 
 struct Goal: Codable{
     var amount: Double
     var interval: Intervals
+    
+    init(amount: Double, interval: Intervals) {
+        self.amount = (amount * 100).rounded()/100
+        self.interval = interval
+    }
 }
 
 enum Intervals: String, Codable {

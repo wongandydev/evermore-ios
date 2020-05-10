@@ -9,13 +9,14 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    var budget = BudgetManager.get()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupViews()
-    }
-    
-    private func setupViews() {
+        if budget.goal == nil {
+            budget.setGoal()
+        }
         
     }
 }
