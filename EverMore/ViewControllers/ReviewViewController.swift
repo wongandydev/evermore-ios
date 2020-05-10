@@ -26,16 +26,17 @@ class ReviewViewController: UIViewController {
         
         let categoryLabel = UILabel()
         categoryLabel.text = "Review"
-        categoryLabel.font = UIFont.systemFont(ofSize: 20)
+        categoryLabel.font = UIFont.systemFont(ofSize: 30, weight: .semibold)
         
         self.view.addSubview(categoryLabel)
         categoryLabel.snp.makeConstraints({ make in
-            make.top.equalToSuperview().offset(Constants.topPadding + 20)
+            make.top.equalToSuperview().offset(Constants.topPadding + Constants.navigationBarHeight)
             make.width.equalToSuperview().multipliedBy(0.8)
             make.centerX.equalToSuperview()
         })
         
         let vStack = UIStackView()
+        vStack.spacing = 20
         vStack.axis = .vertical
         
         self.view.addSubview(vStack)
@@ -51,6 +52,7 @@ class ReviewViewController: UIViewController {
         
         let debtText = UILabel()
         debtText.text = "Debt:"
+        debtText.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         debtStack.addArrangedSubview(debtText)
         
         let debtLabel = UILabel()
@@ -70,13 +72,14 @@ class ReviewViewController: UIViewController {
         
         let salaryText = UILabel()
         salaryText.text = "Salary:"
+        salaryText.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         salaryStack.addArrangedSubview(salaryText)
         
         let salaryLabel = UILabel()
         salaryLabel.numberOfLines = 0
         
         if let salary = budget.salary {
-            salaryLabel.text = "\(salary.amount)/\(salary.interval.rawValue)"
+            salaryLabel.text = "$\(salary.amount)/\(salary.interval.rawValue)"
         } else {
             salaryLabel.text = "No Salary"
         }
@@ -89,6 +92,7 @@ class ReviewViewController: UIViewController {
         
         let savingsText = UILabel()
         savingsText.text = "Savings: "
+        savingsText.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         savingsText.numberOfLines = 0
         savingsStack.addArrangedSubview(savingsText)
         
@@ -96,7 +100,7 @@ class ReviewViewController: UIViewController {
         savingsLabel.numberOfLines = 0
         
         if let savings = budget.savingGoal {
-            savingsLabel.text = "\(savings.amount)/\(savings.interval.rawValue)"
+            savingsLabel.text = "$\(savings.amount)/\(savings.interval.rawValue)"
         } else {
             savingsLabel.text = "No Savings set."
         }
@@ -110,10 +114,12 @@ class ReviewViewController: UIViewController {
             
             let goalText = UILabel()
             goalText.text = "Goal: "
+            goalText.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
             goalStack.addArrangedSubview(goalText)
             
             let goalLabel = UILabel()
-            goalLabel.text = "\(goal.interval) budget of: \(goal.amount)"
+            goalLabel.text = "\(goal.interval.rawValue.capitalizingFirstLetter()) budget of: $\(goal.amount)"
+            goalLabel.numberOfLines = 0
             goalStack.addArrangedSubview(goalLabel)
         }
     }
