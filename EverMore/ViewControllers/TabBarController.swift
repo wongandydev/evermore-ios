@@ -15,8 +15,8 @@ class TabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        firstVC.tabBarItem = UITabBarItem(title: "Home", image: nil, selectedImage: nil)
-        secondVC.tabBarItem = UITabBarItem(title: "Budget", image: nil, selectedImage: nil)
+        firstVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: "home"), selectedImage: UIImage(named: "home"))
+        secondVC.tabBarItem = UITabBarItem(title: "Budget", image: UIImage(named: "review"), selectedImage: UIImage(named: "review"))
         
         viewControllers = [firstVC, secondVC]
         
