@@ -9,6 +9,13 @@
 import UIKit
 
 class Extensions {
+    static func dateToDisplayString(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/yyyy"
+        dateFormatter.timeZone = TimeZone.current
+        
+        return dateFormatter.string(from: date)
+    }
 }
 
 extension UIViewController {

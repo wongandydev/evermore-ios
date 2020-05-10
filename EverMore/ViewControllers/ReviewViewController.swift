@@ -59,7 +59,9 @@ class ReviewViewController: UIViewController {
         debtLabel.numberOfLines = 0
         
         if let debt = budget.debt {
-            debtLabel.text = "\(String(describing: debt.amount)) Due on \(Date(timeIntervalSince1970: debt.dueDate ?? TimeInterval()))"
+            let dueDate = Date(timeIntervalSince1970: debt.dueDate)
+            let string = Extensions.dateToDisplayString(date: dueDate)
+            debtLabel.text = "$\(String(describing: debt.amount)) \nDue on \(string)"
         } else {
             debtLabel.text = "No Debt! YAY!"
         }
