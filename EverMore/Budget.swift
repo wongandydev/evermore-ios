@@ -44,7 +44,14 @@ struct Budget: Codable {
     var salary: Salary?
     var savingGoal: Saving?
     
-    var goal: Goal?
+    var currentBudget: Double?
+    
+    var goal: Goal? {
+        didSet {
+            currentBudget = goal?.amount
+            BudgetManager.save(self)
+        }
+    }
     
     private func calculateGoalWithSameInterval(salary: Salary, saving: Saving) -> Goal {
         let budget = salary.amount - saving.amount
@@ -183,9 +190,11 @@ struct Budget: Codable {
                 let result = calculateGoalWithDebt(debt: debtDuePerMonth, salary: salary, saving: saving)
                 if result.1 == nil {
                     goal = result.0
+                    BudgetManager.save(self)
                 } else {
                     self.debt = nil
                     goal = result.0
+                    BudgetManager.save(self)
                 }
             }
         } else {
@@ -195,8 +204,10 @@ struct Budget: Codable {
                 
                 if salaryInterval == savingInterval {
                     goal = calculateGoalWithSameInterval(salary: salary, saving: saving)
+                    BudgetManager.save(self)
                 } else {
                     goal = calculateGoalWithDifferentIntervals(salary: salary, saving: saving)
+                    BudgetManager.save(self)
                 }
                 
             }

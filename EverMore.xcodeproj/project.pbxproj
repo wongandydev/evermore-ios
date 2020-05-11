@@ -19,6 +19,7 @@
 		A0750D3E245E39C500194C15 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0750D3D245E39C500194C15 /* Extensions.swift */; };
 		A0750D40245E3AB300194C15 /* BottomBackNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0750D3F245E3AB300194C15 /* BottomBackNextView.swift */; };
 		A07BB41B245F19E200A9EBB2 /* MultipleSelectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07BB41A245F19E200A9EBB2 /* MultipleSelectionListViewController.swift */; };
+		A095E8B32469D7450023D3C8 /* EditCurrentBudgetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A095E8B22469D7450023D3C8 /* EditCurrentBudgetVC.swift */; };
 		A09D436D24647D5A00ABFAEC /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09D436C24647D5A00ABFAEC /* ReviewViewController.swift */; };
 		A0B68CA9245D55A7002B6DED /* OnboardingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B68CA8245D55A7002B6DED /* OnboardingHeaderView.swift */; };
 		A0B68CAB245D55B6002B6DED /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B68CAA245D55B6002B6DED /* OnboardingCell.swift */; };
@@ -67,6 +68,7 @@
 		A0750D3D245E39C500194C15 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A0750D3F245E3AB300194C15 /* BottomBackNextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBackNextView.swift; sourceTree = "<group>"; };
 		A07BB41A245F19E200A9EBB2 /* MultipleSelectionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionListViewController.swift; sourceTree = "<group>"; };
+		A095E8B22469D7450023D3C8 /* EditCurrentBudgetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCurrentBudgetVC.swift; sourceTree = "<group>"; };
 		A09D436C24647D5A00ABFAEC /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		A0B68CA8245D55A7002B6DED /* OnboardingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingHeaderView.swift; sourceTree = "<group>"; };
 		A0B68CAA245D55B6002B6DED /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				A09D436C24647D5A00ABFAEC /* ReviewViewController.swift */,
 				A0019B29246712A60061BBF5 /* TabBarController.swift */,
 				A0019B2B246712F00061BBF5 /* HomeViewController.swift */,
+				A095E8B22469D7450023D3C8 /* EditCurrentBudgetVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				A0FC449E245D3C9E00B1ADCA /* EverMore.xcdatamodeld in Sources */,
 				A0019B2A246712A60061BBF5 /* TabBarController.swift in Sources */,
 				A0FC4496245D3C9E00B1ADCA /* SceneDelegate.swift in Sources */,
+				A095E8B32469D7450023D3C8 /* EditCurrentBudgetVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,7 +9,9 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-    var budget = BudgetManager.get()
+    private var budget = BudgetManager.get()
+    private let budgetLabel = UILabel()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +26,7 @@ class HomeViewController: UIViewController {
     private func setupViews() {
         self.view.backgroundColor = .systemBackground
         
-        let budgetLabel = UILabel()
-        budgetLabel.text = String(format: "$ %.2f", Double(budget.goal?.amount ?? 0))
+        budgetLabel.text = String(format: "$ %.2f", Double(budget.currentBudget ?? 0))
         budgetLabel.textAlignment = .center
         budgetLabel.font = UIFont.systemFont(ofSize: 30, weight: .bold)
         
@@ -134,10 +135,27 @@ class HomeViewController: UIViewController {
     }
     
     @objc private func iMadeMoneyButtonTapped(_ sender: UIButton) {
-        print("dlf;asdf;lshpfkhajlsdfgkladsgkflj skfhkasdlbhcsabiy")
+        let editVC = EditCurrentBudgetVC()
+        editVC.addMoney = true
+        editVC.delegate = self
+        editVC.modalPresentationStyle = .overFullScreen
+        
+        self.present(editVC, animated: true, completion: nil)
     }
     
     @objc private func iInvestedInMyselfButtonTapped(_ sender: UIButton) {
-        print("jiggly jiggly")
+        let editVC = EditCurrentBudgetVC()
+        editVC.addMoney = false
+        editVC.delegate = self
+        editVC.modalPresentationStyle = .overFullScreen
+        
+        self.present(editVC, animated: true, completion: nil)
+    }
+}
+
+extension HomeViewController: EditBudgetDelegate {
+    func getNewBudget() {
+        budget = BudgetManager.get()
+        budgetLabel.text = String(format: "$ %.2f", Double(budget.currentBudget ?? 0))
     }
 }
