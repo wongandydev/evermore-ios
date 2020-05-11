@@ -17,7 +17,7 @@ class DebtOwedVC: UIViewController {
     var cellData: [OnboardingInfo]!
     
     private let bottomBackNextView = BottomBackNextView()
-    private let amountTextField = UITextField()
+    private let amountTextField = UnderlineTextfield()
     private let dueDateDatePicker = UIDatePicker()
     
     
@@ -79,12 +79,11 @@ class DebtOwedVC: UIViewController {
         item1StackView.addArrangedSubview(amountTitleLabel)
         
         amountTextField.keyboardType = .decimalPad
-        amountTextField.borderStyle = .line
-        amountTextField.setDoneOnKeyboard()
         
         item1StackView.addArrangedSubview(amountTextField)
         amountTextField.snp.makeConstraints({ make in
             make.width.equalToSuperview().dividedBy(3)
+            make.height.equalTo(50)
         })
         
         let item3StackView = UIStackView()

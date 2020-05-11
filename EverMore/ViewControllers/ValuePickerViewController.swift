@@ -14,7 +14,7 @@ class ValuePickerViewController: UIViewController {
     var cellData: [OnboardingInfo]!
     
     private let bottomBackNextView = BottomBackNextView()
-    private let amountTextField = UITextField()
+    private let amountTextField = UnderlineTextfield()
     private let frequencyPicker = UIPickerView()
  
     override func viewDidLoad() {
@@ -53,13 +53,12 @@ class ValuePickerViewController: UIViewController {
         })
         
         amountTextField.keyboardType = .decimalPad
-        amountTextField.borderStyle = .line
-        amountTextField.setDoneOnKeyboard()
         
         self.view.addSubview(amountTextField)
         amountTextField.snp.makeConstraints({ make in
             make.width.equalToSuperview().multipliedBy(0.8)
             make.centerX.equalToSuperview()
+            make.height.equalTo(50)
             make.top.equalTo(questionLabel.snp.bottom).offset(40 * Constants.smallScreenTypeScale)
         })
         

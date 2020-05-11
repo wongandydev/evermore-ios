@@ -96,14 +96,13 @@ class MultipleSelectionListViewController: UIViewController {
             
             item1StackView.addArrangedSubview(amountTitleLabel)
             
-            let amountTextField = UITextField()
+            let amountTextField = UnderlineTextfield()
             amountTextField.keyboardType = .decimalPad
-            amountTextField.borderStyle = .line
-            amountTextField.setDoneOnKeyboard()
             
             item1StackView.addArrangedSubview(amountTextField)
             amountTextField.snp.makeConstraints({ make in
                 make.width.equalToSuperview().dividedBy(3)
+                make.height.equalTo(50)
             })
             
             let item2StackView = UIStackView()
@@ -118,14 +117,13 @@ class MultipleSelectionListViewController: UIViewController {
             
             item2StackView.addArrangedSubview(aprTitleLabel)
             
-            let aprTextField = UITextField()
+            let aprTextField = UnderlineTextfield()
             aprTextField.keyboardType = .decimalPad
-            aprTextField.borderStyle = .line
-            aprTextField.setDoneOnKeyboard()
             
             item2StackView.addArrangedSubview(aprTextField)
             aprTextField.snp.makeConstraints({ make in
                 make.width.equalToSuperview().dividedBy(3)
+                make.height.equalTo(50)
             })
             
             let item3StackView = UIStackView()
@@ -140,14 +138,13 @@ class MultipleSelectionListViewController: UIViewController {
             
             item3StackView.addArrangedSubview(dueDateTitleLabel)
             
-            let dueDateTextField = UITextField()
+            let dueDateTextField = UnderlineTextfield()
             dueDateTextField.keyboardType = .numberPad
-            dueDateTextField.borderStyle = .line
-            dueDateTextField.setDoneOnKeyboard()
             
             item3StackView.addArrangedSubview(dueDateTextField)
             dueDateTextField.snp.makeConstraints({ make in
                 make.width.equalToSuperview().dividedBy(3)
+                make.height.equalTo(50)
             })
         }
         

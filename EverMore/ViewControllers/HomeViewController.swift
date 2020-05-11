@@ -138,7 +138,6 @@ class HomeViewController: UIViewController {
         let editVC = EditCurrentBudgetVC()
         editVC.addMoney = true
         editVC.delegate = self
-        editVC.modalPresentationStyle = .overFullScreen
         
         self.present(editVC, animated: true, completion: nil)
     }
@@ -147,7 +146,6 @@ class HomeViewController: UIViewController {
         let editVC = EditCurrentBudgetVC()
         editVC.addMoney = false
         editVC.delegate = self
-        editVC.modalPresentationStyle = .overFullScreen
         
         self.present(editVC, animated: true, completion: nil)
     }

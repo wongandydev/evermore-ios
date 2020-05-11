@@ -15,7 +15,7 @@ protocol EditBudgetDelegate {
 class EditCurrentBudgetVC: UIViewController {
     private var budget = BudgetManager.get()
     
-    private let enterTextField = UITextField()
+    private let enterTextField = UnderlineTextfield()
     private let bottomBackNextView = BottomBackNextView()
     
     var delegate: EditBudgetDelegate!
@@ -43,18 +43,18 @@ class EditCurrentBudgetVC: UIViewController {
         })
         
         enterTextField.delegate = self
-        enterTextField.keyboardType = .numberPad
-        enterTextField.borderStyle = .line
-        enterTextField.setDoneOnKeyboard()
+        enterTextField.keyboardType = .decimalPad
+        enterTextField.borderStyle = .none
         
         self.view.addSubview(enterTextField)
         enterTextField.snp.makeConstraints({ make in
             make.top.equalTo(enterLabel.snp.bottom).offset(20)
             make.width.equalToSuperview().dividedBy(2)
+            make.height.equalTo(50)
             make.centerX.equalToSuperview()
             
         })
-        
+    
         bottomBackNextView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
         
         self.view.addSubview(bottomBackNextView)
