@@ -18,14 +18,17 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        interstitial = GADInterstitial(adUnitID: Constants.InterstitialAdUnitId)
-        interstitial.load(GADRequest())
-        
         if budget.goal == nil {
             budget.setGoal()
         }
         
+        prepareInterstitialAd()
         setupViews()
+    }
+    
+    private func prepareInterstitialAd() {
+        interstitial = GADInterstitial(adUnitID: Constants.InterstitialAdUnitId)
+        interstitial.load(GADRequest())
     }
     
     private func addBannerToView() {
