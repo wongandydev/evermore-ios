@@ -10,6 +10,9 @@ import UIKit
 
 struct Constants {
     // UI Measurements
+    static let inDevelopment = true
+    static var bannerAdUnitId = inDevelopment ? "ca-app-pub-3940256099942544/2934735716":"ca-app-pub-4388758752901980/7907334743"
+    static var InterstitialAdUnitId = inDevelopment ? "ca-app-pub-3940256099942544/4411468910" : "ca-app-pub-4388758752901980/8753512559"
     
     static let statusBarHeight                  = UIApplication.shared.statusBarFrame.height
     static let navigationBarHeight              = CGFloat(44.0)

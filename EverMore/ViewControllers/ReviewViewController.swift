@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class ReviewViewController: UIViewController {
-    var budget: Budget = BudgetManager.get()
+    private var budget: Budget = BudgetManager.get()
+    private var bannerView: DFPBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,19 @@ class ReviewViewController: UIViewController {
         }
         
         setupViews()
+    }
+    
+    private func addBannerToView() {
+        bannerView = DFPBannerView(adSize: kGADAdSizeBanner)
+        bannerView.adUnitID = Constants.bannerAdUnitId
+        bannerView.rootViewController = self
+        bannerView.load(DFPRequest())
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(bannerView)
+        bannerView.snp.makeConstraints({ make in
+            make.left.right.bottom.equalToSuperview()
+        })
     }
     
     private func setupViews() {
@@ -124,6 +139,8 @@ class ReviewViewController: UIViewController {
             goalLabel.numberOfLines = 0
             goalStack.addArrangedSubview(goalLabel)
         }
+        
+        addBannerToView()
     }
 }
 

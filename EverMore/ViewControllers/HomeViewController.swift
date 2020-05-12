@@ -7,20 +7,38 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class HomeViewController: UIViewController {
     private var budget = BudgetManager.get()
     private let budgetLabel = UILabel()
-    
-    
+    private var bannerView: DFPBannerView!
+    private var interstitial: GADInterstitial!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        interstitial = GADInterstitial(adUnitID: Constants.InterstitialAdUnitId)
+        interstitial.load(GADRequest())
         
         if budget.goal == nil {
             budget.setGoal()
         }
         
         setupViews()
+    }
+    
+    private func addBannerToView() {
+        bannerView = DFPBannerView(adSize: kGADAdSizeBanner)
+        bannerView.adUnitID = Constants.bannerAdUnitId
+        bannerView.rootViewController = self
+        bannerView.load(DFPRequest())
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(bannerView)
+        bannerView.snp.makeConstraints({ make in
+            make.left.right.bottom.equalToSuperview()
+        })
     }
     
     private func setupViews() {
@@ -132,6 +150,8 @@ class HomeViewController: UIViewController {
         iInvestedInMyselfButton.snp.makeConstraints({ make in
             make.edges.equalToSuperview()
         })
+        
+        addBannerToView()
     }
     
     @objc private func iMadeMoneyButtonTapped(_ sender: UIButton) {
@@ -139,7 +159,14 @@ class HomeViewController: UIViewController {
         editVC.addMoney = true
         editVC.delegate = self
         
-        self.present(editVC, animated: true, completion: nil)
+        if Int.random(in: 1...10)%2 == 0 {
+            if interstitial.isReady {
+                interstitial.present(fromRootViewController: self)
+            }
+        } else {
+            self.present(editVC, animated: true, completion: nil)
+
+        }
     }
     
     @objc private func iInvestedInMyselfButtonTapped(_ sender: UIButton) {
@@ -147,7 +174,14 @@ class HomeViewController: UIViewController {
         editVC.addMoney = false
         editVC.delegate = self
         
-        self.present(editVC, animated: true, completion: nil)
+        if Int.random(in: 1...10)%2 == 0 {
+            if interstitial.isReady {
+                interstitial.present(fromRootViewController: self)
+            }
+        } else {
+            self.present(editVC, animated: true, completion: nil)
+
+        }
     }
 }
 
