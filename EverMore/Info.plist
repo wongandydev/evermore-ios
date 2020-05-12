@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>IN_DEVELOPMENT</key>
+	<string>$(IN_DEVELOPMENT)</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-4388758752901980~1533498087</string>
 	<key>NSAppTransportSecurity</key>

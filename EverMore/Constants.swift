@@ -9,8 +9,14 @@
 import UIKit
 
 struct Constants {
-    // UI Measurements
-    static let inDevelopment = true
+    static var inDevelopment: Bool {
+        guard let inDevelopment = Bundle.main.infoDictionary?["IN_DEVELOPMENT"] as? String else {
+            return true
+        }
+        
+        return inDevelopment == "YES"
+    }
+    
     static var bannerAdUnitId = inDevelopment ? "ca-app-pub-3940256099942544/2934735716":"ca-app-pub-4388758752901980/7907334743"
     static var InterstitialAdUnitId = inDevelopment ? "ca-app-pub-3940256099942544/4411468910" : "ca-app-pub-4388758752901980/8753512559"
     
