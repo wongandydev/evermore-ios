@@ -11,7 +11,7 @@
 		763F155EC2F93FE0A8AEF17E /* Pods_EverMoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66052AC8C6D66000B096E3CC /* Pods_EverMoreTests.framework */; };
 		A0019B2A246712A60061BBF5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0019B29246712A60061BBF5 /* TabBarController.swift */; };
 		A0019B2C246712F00061BBF5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0019B2B246712F00061BBF5 /* HomeViewController.swift */; };
-		A00C099F246DCC8100691728 /* OnboardingScrollViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00C099E246DCC8100691728 /* OnboardingScrollViewViewController.swift */; };
+		A00C099F246DCC8100691728 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00C099E246DCC8100691728 /* TutorialViewController.swift */; };
 		A0385E4D2461D0A600A77848 /* DebtOwedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0385E4C2461D0A600A77848 /* DebtOwedVC.swift */; };
 		A0385E4F2461DA2F00A77848 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0385E4E2461DA2F00A77848 /* Budget.swift */; };
 		A0403FD92465C26700A81462 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0403FD82465C26700A81462 /* Budget.swift */; };
@@ -62,7 +62,7 @@
 		94F8EFEDCDDAB8531583408A /* Pods-EverMoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverMoreTests.debug.xcconfig"; path = "Target Support Files/Pods-EverMoreTests/Pods-EverMoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A0019B29246712A60061BBF5 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A0019B2B246712F00061BBF5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		A00C099E246DCC8100691728 /* OnboardingScrollViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScrollViewViewController.swift; sourceTree = "<group>"; };
+		A00C099E246DCC8100691728 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		A0385E4C2461D0A600A77848 /* DebtOwedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtOwedVC.swift; sourceTree = "<group>"; };
 		A0385E4E2461DA2F00A77848 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		A0403FD82465C26700A81462 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 				A0019B29246712A60061BBF5 /* TabBarController.swift */,
 				A0019B2B246712F00061BBF5 /* HomeViewController.swift */,
 				A095E8B22469D7450023D3C8 /* EditCurrentBudgetVC.swift */,
-				A00C099E246DCC8100691728 /* OnboardingScrollViewViewController.swift */,
+				A00C099E246DCC8100691728 /* TutorialViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -471,7 +471,7 @@
 				A09D436D24647D5A00ABFAEC /* ReviewViewController.swift in Sources */,
 				A0385E4D2461D0A600A77848 /* DebtOwedVC.swift in Sources */,
 				A0FC4494245D3C9E00B1ADCA /* AppDelegate.swift in Sources */,
-				A00C099F246DCC8100691728 /* OnboardingScrollViewViewController.swift in Sources */,
+				A00C099F246DCC8100691728 /* TutorialViewController.swift in Sources */,
 				A07BB41B245F19E200A9EBB2 /* MultipleSelectionListViewController.swift in Sources */,
 				A0750D40245E3AB300194C15 /* BottomBackNextView.swift in Sources */,
 				A0A19EA2246B1923000FD2FD /* CategoryLabel.swift in Sources */,

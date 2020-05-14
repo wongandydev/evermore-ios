@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         window = UIWindow()
-        var viewController: UIViewController = OnboardingScrollViewViewController()
+        var viewController: UIViewController = TutorialViewController()
         
         let onboardingCompleted = UserDefaults.standard.bool(forKey: Constants.defaultScreenerCompleted)
         let tutorialCompleted = UserDefaults.standard.bool(forKey: Constants.defaultTutorialCompleted)

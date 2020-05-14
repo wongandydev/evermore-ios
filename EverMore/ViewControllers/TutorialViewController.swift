@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OnboardingScrollViewViewController: UIViewController {
+class TutorialViewController: UIViewController {
     private let scrollView = UIScrollView()
     private let pageIndicator = UIPageControl()
     
@@ -18,7 +18,7 @@ class OnboardingScrollViewViewController: UIViewController {
         ["text": "1. Add your debt and when you plan to pay it off. (If you don't have any good for you! If you do that's okay.) \n80% of Americans do!", "image": UIImage(named: "debt")],
         ["text": "2. Add how much you make. Daily, Weekly, Bi-Weekly or Monthly. (We do not do yearly because we think knowing how much you make in a closer interval keeps your brain budgetting!)", "image": UIImage(named: "salary")],
         ["text": "3. Lastly, add you savings goal. How much do you want to save?", "image": UIImage(named: "saving")],
-        ["text": "That's it!\nTap 'Get started', to start your budgetting journey!", "image": UIImage(named: "done")]
+        ["text": "That's it!\nTap 'Get Started', to start your budgetting journey!", "image": UIImage(named: "done")]
     ]
     
     override func viewDidLoad() {
@@ -108,7 +108,7 @@ class OnboardingScrollViewViewController: UIViewController {
                 getStartedButton.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
                 getStartedButton.layer.cornerRadius = 15
                 getStartedButton.addTarget(self, action: #selector(getStartedButtonTapped), for: .touchUpInside)
-                getStartedButton.backgroundColor = .green
+                getStartedButton.backgroundColor = .moneyGreenColor
                 
                 view.addSubview(getStartedButton)
                 getStartedButton.snp.makeConstraints({ make in
@@ -133,7 +133,7 @@ class OnboardingScrollViewViewController: UIViewController {
     }
 }
 
-extension OnboardingScrollViewViewController: UIScrollViewDelegate {
+extension TutorialViewController: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageNumber = round(scrollView.contentOffset.x/scrollView.frame.size.width)
         pageIndicator.currentPage = Int(pageNumber)
