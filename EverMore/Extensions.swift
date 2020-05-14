@@ -77,5 +77,6 @@ extension String {
 
 extension UIColor {
     static let textColor = UIColor(named: "textColor")
+    static let backgroundColor = UIColor(named: "background")
     static let defaultTextFieldPlaceholderColor = UIColor(hue: 50/360, saturation: 100/100, brightness: 0/100, alpha: 0.3)
 }

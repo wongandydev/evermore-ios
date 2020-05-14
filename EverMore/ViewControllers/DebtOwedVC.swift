@@ -30,15 +30,14 @@ class DebtOwedVC: UIViewController {
     }
     
     private func setupViews() {
-        self.view.backgroundColor = .systemBackground
+        self.view.backgroundColor = .backgroundColor
         
-        let label = UILabel()
+        let label = CategoryLabel()
         label.text = "Debt"
-        label.font = UIFont.systemFont(ofSize: 16)
         
         self.view.addSubview(label)
         label.snp.makeConstraints({ make in
-            make.top.equalToSuperview().offset(Constants.topPadding + 20)
+            make.top.equalToSuperview().offset(140 * Constants.smallScreenTypeScale)
             make.width.equalToSuperview().multipliedBy(0.8)
             make.centerX.equalToSuperview()
         })

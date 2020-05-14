@@ -21,7 +21,7 @@ class MultipleSelectionListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .systemBackground
+        self.view.backgroundColor = .backgroundColor
                 
         let scrollView = UIScrollView()
         scrollView.bounces = true

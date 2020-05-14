@@ -11,6 +11,7 @@
 		763F155EC2F93FE0A8AEF17E /* Pods_EverMoreTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66052AC8C6D66000B096E3CC /* Pods_EverMoreTests.framework */; };
 		A0019B2A246712A60061BBF5 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0019B29246712A60061BBF5 /* TabBarController.swift */; };
 		A0019B2C246712F00061BBF5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0019B2B246712F00061BBF5 /* HomeViewController.swift */; };
+		A00C099F246DCC8100691728 /* OnboardingScrollViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00C099E246DCC8100691728 /* OnboardingScrollViewViewController.swift */; };
 		A0385E4D2461D0A600A77848 /* DebtOwedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0385E4C2461D0A600A77848 /* DebtOwedVC.swift */; };
 		A0385E4F2461DA2F00A77848 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0385E4E2461DA2F00A77848 /* Budget.swift */; };
 		A0403FD92465C26700A81462 /* Budget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0403FD82465C26700A81462 /* Budget.swift */; };
@@ -22,10 +23,10 @@
 		A07BB41B245F19E200A9EBB2 /* MultipleSelectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A07BB41A245F19E200A9EBB2 /* MultipleSelectionListViewController.swift */; };
 		A095E8B32469D7450023D3C8 /* EditCurrentBudgetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A095E8B22469D7450023D3C8 /* EditCurrentBudgetVC.swift */; };
 		A09D436D24647D5A00ABFAEC /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09D436C24647D5A00ABFAEC /* ReviewViewController.swift */; };
+		A0A19EA2246B1923000FD2FD /* CategoryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A19EA1246B1923000FD2FD /* CategoryLabel.swift */; };
 		A0B68CA9245D55A7002B6DED /* OnboardingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B68CA8245D55A7002B6DED /* OnboardingHeaderView.swift */; };
 		A0B68CAB245D55B6002B6DED /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B68CAA245D55B6002B6DED /* OnboardingCell.swift */; };
 		A0FC4494245D3C9E00B1ADCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC4493245D3C9E00B1ADCA /* AppDelegate.swift */; };
-		A0FC4496245D3C9E00B1ADCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC4495245D3C9E00B1ADCA /* SceneDelegate.swift */; };
 		A0FC449E245D3C9E00B1ADCA /* EverMore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0FC449C245D3C9E00B1ADCA /* EverMore.xcdatamodeld */; };
 		A0FC44A0245D3C9F00B1ADCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0FC449F245D3C9F00B1ADCA /* Assets.xcassets */; };
 		A0FC44A3245D3C9F00B1ADCA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0FC44A1245D3C9F00B1ADCA /* LaunchScreen.storyboard */; };
@@ -61,6 +62,7 @@
 		94F8EFEDCDDAB8531583408A /* Pods-EverMoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverMoreTests.debug.xcconfig"; path = "Target Support Files/Pods-EverMoreTests/Pods-EverMoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A0019B29246712A60061BBF5 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		A0019B2B246712F00061BBF5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A00C099E246DCC8100691728 /* OnboardingScrollViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScrollViewViewController.swift; sourceTree = "<group>"; };
 		A0385E4C2461D0A600A77848 /* DebtOwedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtOwedVC.swift; sourceTree = "<group>"; };
 		A0385E4E2461DA2F00A77848 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
 		A0403FD82465C26700A81462 /* Budget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Budget.swift; sourceTree = "<group>"; };
@@ -72,11 +74,11 @@
 		A07BB41A245F19E200A9EBB2 /* MultipleSelectionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSelectionListViewController.swift; sourceTree = "<group>"; };
 		A095E8B22469D7450023D3C8 /* EditCurrentBudgetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCurrentBudgetVC.swift; sourceTree = "<group>"; };
 		A09D436C24647D5A00ABFAEC /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		A0A19EA1246B1923000FD2FD /* CategoryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryLabel.swift; sourceTree = "<group>"; };
 		A0B68CA8245D55A7002B6DED /* OnboardingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingHeaderView.swift; sourceTree = "<group>"; };
 		A0B68CAA245D55B6002B6DED /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
 		A0FC4490245D3C9E00B1ADCA /* EverMore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverMore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FC4493245D3C9E00B1ADCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A0FC4495245D3C9E00B1ADCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A0FC449D245D3C9E00B1ADCA /* EverMore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EverMore.xcdatamodel; sourceTree = "<group>"; };
 		A0FC449F245D3C9F00B1ADCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0FC44A2245D3C9F00B1ADCA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				A0B68CAD245D56C7002B6DED /* Cells */,
 				A0750D3F245E3AB300194C15 /* BottomBackNextView.swift */,
 				A04B5E5F2469E034008A418A /* UnderlineTextfield.swift */,
+				A0A19EA1246B1923000FD2FD /* CategoryLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 				A0019B29246712A60061BBF5 /* TabBarController.swift */,
 				A0019B2B246712F00061BBF5 /* HomeViewController.swift */,
 				A095E8B22469D7450023D3C8 /* EditCurrentBudgetVC.swift */,
+				A00C099E246DCC8100691728 /* OnboardingScrollViewViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -187,7 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				A0FC4493245D3C9E00B1ADCA /* AppDelegate.swift */,
-				A0FC4495245D3C9E00B1ADCA /* SceneDelegate.swift */,
 				A0B68CAF245D574C002B6DED /* ViewControllers */,
 				A0B68CAC245D56C0002B6DED /* Views */,
 				A0FC449F245D3C9F00B1ADCA /* Assets.xcassets */,
@@ -468,8 +471,10 @@
 				A09D436D24647D5A00ABFAEC /* ReviewViewController.swift in Sources */,
 				A0385E4D2461D0A600A77848 /* DebtOwedVC.swift in Sources */,
 				A0FC4494245D3C9E00B1ADCA /* AppDelegate.swift in Sources */,
+				A00C099F246DCC8100691728 /* OnboardingScrollViewViewController.swift in Sources */,
 				A07BB41B245F19E200A9EBB2 /* MultipleSelectionListViewController.swift in Sources */,
 				A0750D40245E3AB300194C15 /* BottomBackNextView.swift in Sources */,
+				A0A19EA2246B1923000FD2FD /* CategoryLabel.swift in Sources */,
 				A0B68CAB245D55B6002B6DED /* OnboardingCell.swift in Sources */,
 				A0385E4F2461DA2F00A77848 /* Budget.swift in Sources */,
 				A0B68CA9245D55A7002B6DED /* OnboardingHeaderView.swift in Sources */,
@@ -478,7 +483,6 @@
 				A04591F2245E049500ADEFFD /* Constants.swift in Sources */,
 				A0FC449E245D3C9E00B1ADCA /* EverMore.xcdatamodeld in Sources */,
 				A0019B2A246712A60061BBF5 /* TabBarController.swift in Sources */,
-				A0FC4496245D3C9E00B1ADCA /* SceneDelegate.swift in Sources */,
 				A095E8B32469D7450023D3C8 /* EditCurrentBudgetVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -658,7 +662,7 @@
 				);
 				INFOPLIST_FILE = EverMore/Info.plist;
 				IN_DEVELOPMENT = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -689,7 +693,7 @@
 				);
 				INFOPLIST_FILE = EverMore/Info.plist;
 				IN_DEVELOPMENT = NO;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

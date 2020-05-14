@@ -39,7 +39,7 @@ class OnboardingMultipleChoiceViewController: UICollectionViewController, UIColl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = .systemBackground
+        self.view.backgroundColor = .backgroundColor
         self.navigationController?.navigationBar.isHidden = true
         
         setupCollectionVC()

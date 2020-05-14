@@ -45,7 +45,7 @@ class HomeViewController: UIViewController {
     }
     
     private func setupViews() {
-        self.view.backgroundColor = .systemBackground
+        self.view.backgroundColor = .backgroundColor
         
         budgetLabel.text = String(format: "$ %.2f", Double(budget.currentBudget ?? 0))
         budgetLabel.textAlignment = .center

@@ -26,18 +26,16 @@ class ValuePickerViewController: UIViewController {
     }
     
     private func setupViews() {
-        self.view.backgroundColor = .systemBackground
+        self.view.backgroundColor = .backgroundColor
         
-        let categoryLabel = UILabel()
+        let categoryLabel = CategoryLabel()
         categoryLabel.text = cellData[page].categoryTitle
-        categoryLabel.numberOfLines = 0
-        categoryLabel.font = UIFont.systemFont(ofSize: 20)
         
         self.view.addSubview(categoryLabel)
         categoryLabel.snp.makeConstraints({ make in
             make.top.equalToSuperview().offset(140 * Constants.smallScreenTypeScale)
-           make.width.equalToSuperview().multipliedBy(0.8)
-           make.centerX.equalToSuperview()
+            make.width.equalToSuperview().multipliedBy(0.8)
+            make.centerX.equalToSuperview()
         })
         
         

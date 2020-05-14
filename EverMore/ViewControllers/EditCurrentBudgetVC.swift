@@ -29,7 +29,7 @@ class EditCurrentBudgetVC: UIViewController {
     }
     
     private func setupViews() {
-        self.view.backgroundColor = .systemBackground
+        self.view.backgroundColor = .backgroundColor
         
         let enterLabel = UILabel()
         enterLabel.text = "Enter amount: "

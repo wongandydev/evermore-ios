@@ -37,11 +37,10 @@ class ReviewViewController: UIViewController {
     }
     
     private func setupViews() {
-        self.view.backgroundColor = .systemBackground
+        self.view.backgroundColor = .backgroundColor
         
-        let categoryLabel = UILabel()
+        let categoryLabel = CategoryLabel()
         categoryLabel.text = "Review"
-        categoryLabel.font = UIFont.systemFont(ofSize: 30, weight: .semibold)
         
         self.view.addSubview(categoryLabel)
         categoryLabel.snp.makeConstraints({ make in
