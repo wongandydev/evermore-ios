@@ -17,11 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         window = UIWindow()
-        var viewController: UIViewController = OnboardingScrollViewViewController()//OnboardingMultipleChoiceViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        var viewController: UIViewController = OnboardingScrollViewViewController()
         
         let onboardingCompleted = UserDefaults.standard.bool(forKey: Constants.defaultScreenerCompleted)
+        let tutorialCompleted = UserDefaults.standard.bool(forKey: Constants.defaultTutorialCompleted)
+        
         if onboardingCompleted {
             viewController = TabBarController()
+        } else if tutorialCompleted {
+            viewController = OnboardingMultipleChoiceViewController(collectionViewLayout: UICollectionViewFlowLayout())
         }
         
         if viewController is TabBarController {

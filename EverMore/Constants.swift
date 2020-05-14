@@ -58,4 +58,5 @@ struct Constants {
     
     static let defaultBudget = "budget"
     static let defaultScreenerCompleted = "screenerCompleted"
+    static let defaultTutorialCompleted = "tutorialCompleted"
 }
