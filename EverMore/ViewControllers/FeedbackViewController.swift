@@ -117,6 +117,8 @@ class FeedbackViewController: UIViewController {
             if text != placeholderText {
                 Database.database().reference().child("evermore/feedback").childByAutoId().setValue(["text": textView.text,
                                                                                                      "date": Int.currentTime()])
+                
+                UserDefaults.standard.set(true, forKey: Constants.defaultFeedbackGiven)
                 // ok, thank message
                 UIView.animate(withDuration: 0.3, animations: {
                     self.thankYouView.transform = CGAffineTransform(scaleX: 1, y: 1)

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StoreKit
 
 class Extensions {
     static func dateToDisplayString(date: Date) -> String {
@@ -31,16 +32,19 @@ extension UIViewController {
     func showFeedbackAlertMessage() {
         let alertController = UIAlertController(title: "Are you enjoying Evermore?", message: "", preferredStyle: .alert)
         
-        let yesAction = UIAlertAction(title: "Yes", style: .default, handler: { action in
-            // Show ios Feedback
-            
+        let yesAction = UIAlertAction(title: "Yes", style: .cancel, handler: { action in
+            SKStoreReviewController.requestReview()
+            UserDefaults.standard.set(true, forKey: Constants.defaultFeedbackGiven)
         })
+        
         alertController.addAction(yesAction)
         
         let noAction = UIAlertAction(title: "No", style: .default, handler: { action in
             // let us know why
             let feedbackVC = FeedbackViewController()
             feedbackVC.modalPresentationStyle = .overFullScreen
+            
+            
 
             self.present(feedbackVC, animated: true, completion: nil)
             
