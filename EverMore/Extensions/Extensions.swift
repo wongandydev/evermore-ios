@@ -33,11 +33,16 @@ extension UIViewController {
         
         let yesAction = UIAlertAction(title: "Yes", style: .default, handler: { action in
             // Show ios Feedback
+            
         })
         alertController.addAction(yesAction)
         
         let noAction = UIAlertAction(title: "No", style: .default, handler: { action in
             // let us know why
+            let feedbackVC = FeedbackViewController()
+            feedbackVC.modalPresentationStyle = .overFullScreen
+
+            self.present(feedbackVC, animated: true, completion: nil)
             
             
         })
