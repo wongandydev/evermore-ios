@@ -26,6 +26,8 @@
 		A0A19EA2246B1923000FD2FD /* CategoryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A19EA1246B1923000FD2FD /* CategoryLabel.swift */; };
 		A0B68CA9245D55A7002B6DED /* OnboardingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B68CA8245D55A7002B6DED /* OnboardingHeaderView.swift */; };
 		A0B68CAB245D55B6002B6DED /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B68CAA245D55B6002B6DED /* OnboardingCell.swift */; };
+		A0E463BE2470440700078423 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0E463BD2470440700078423 /* GoogleService-Info.plist */; };
+		A0E463C02470454A00078423 /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E463BF2470454A00078423 /* FeedbackViewController.swift */; };
 		A0FC4494245D3C9E00B1ADCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FC4493245D3C9E00B1ADCA /* AppDelegate.swift */; };
 		A0FC449E245D3C9E00B1ADCA /* EverMore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A0FC449C245D3C9E00B1ADCA /* EverMore.xcdatamodeld */; };
 		A0FC44A0245D3C9F00B1ADCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0FC449F245D3C9F00B1ADCA /* Assets.xcassets */; };
@@ -77,6 +79,8 @@
 		A0A19EA1246B1923000FD2FD /* CategoryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryLabel.swift; sourceTree = "<group>"; };
 		A0B68CA8245D55A7002B6DED /* OnboardingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingHeaderView.swift; sourceTree = "<group>"; };
 		A0B68CAA245D55B6002B6DED /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
+		A0E463BD2470440700078423 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A0E463BF2470454A00078423 /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		A0FC4490245D3C9E00B1ADCA /* EverMore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverMore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0FC4493245D3C9E00B1ADCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A0FC449D245D3C9E00B1ADCA /* EverMore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EverMore.xcdatamodel; sourceTree = "<group>"; };
@@ -121,6 +125,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A036FF7B2470420300BD012E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A0385E4E2461DA2F00A77848 /* Budget.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A036FF7C2470421200BD012E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A04591F1245E049500ADEFFD /* Constants.swift */,
+				A0750D3D245E39C500194C15 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		A0B68CAC245D56C0002B6DED /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +182,7 @@
 				A0019B2B246712F00061BBF5 /* HomeViewController.swift */,
 				A095E8B22469D7450023D3C8 /* EditCurrentBudgetVC.swift */,
 				A00C099E246DCC8100691728 /* TutorialViewController.swift */,
+				A0E463BF2470454A00078423 /* FeedbackViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -168,6 +190,7 @@
 		A0FC4487245D3C9E00B1ADCA = {
 			isa = PBXGroup;
 			children = (
+				A0E463BD2470440700078423 /* GoogleService-Info.plist */,
 				A0FC4492245D3C9E00B1ADCA /* EverMore */,
 				A0FC44AC245D3C9F00B1ADCA /* EverMoreTests */,
 				A0FC44B7245D3C9F00B1ADCA /* EverMoreUITests */,
@@ -190,16 +213,15 @@
 		A0FC4492245D3C9E00B1ADCA /* EverMore */ = {
 			isa = PBXGroup;
 			children = (
-				A0FC4493245D3C9E00B1ADCA /* AppDelegate.swift */,
+				A036FF7C2470421200BD012E /* Extensions */,
+				A036FF7B2470420300BD012E /* Model */,
 				A0B68CAF245D574C002B6DED /* ViewControllers */,
 				A0B68CAC245D56C0002B6DED /* Views */,
 				A0FC449F245D3C9F00B1ADCA /* Assets.xcassets */,
 				A0FC44A1245D3C9F00B1ADCA /* LaunchScreen.storyboard */,
 				A0FC44A4245D3C9F00B1ADCA /* Info.plist */,
 				A0FC449C245D3C9E00B1ADCA /* EverMore.xcdatamodeld */,
-				A04591F1245E049500ADEFFD /* Constants.swift */,
-				A0750D3D245E39C500194C15 /* Extensions.swift */,
-				A0385E4E2461DA2F00A77848 /* Budget.swift */,
+				A0FC4493245D3C9E00B1ADCA /* AppDelegate.swift */,
 			);
 			path = EverMore;
 			sourceTree = "<group>";
@@ -355,6 +377,7 @@
 			files = (
 				A0FC44A3245D3C9F00B1ADCA /* LaunchScreen.storyboard in Resources */,
 				A0FC44A0245D3C9F00B1ADCA /* Assets.xcassets in Resources */,
+				A0E463BE2470440700078423 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +491,7 @@
 				A04B5E602469E034008A418A /* UnderlineTextfield.swift in Sources */,
 				A0FC44C7245D435800B1ADCA /* OnboardingMultipleChoiceVC.swift in Sources */,
 				A0750D3E245E39C500194C15 /* Extensions.swift in Sources */,
+				A0E463C02470454A00078423 /* FeedbackViewController.swift in Sources */,
 				A09D436D24647D5A00ABFAEC /* ReviewViewController.swift in Sources */,
 				A0385E4D2461D0A600A77848 /* DebtOwedVC.swift in Sources */,
 				A0FC4494245D3C9E00B1ADCA /* AppDelegate.swift in Sources */,

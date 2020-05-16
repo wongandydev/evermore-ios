@@ -27,9 +27,42 @@ extension UIViewController {
         
         self.present(alertController, animated: true)
     }
+    
+    func showFeedbackAlertMessage() {
+        let alertController = UIAlertController(title: "Are you enjoying Evermore?", message: "", preferredStyle: .alert)
+        
+        let yesAction = UIAlertAction(title: "Yes", style: .default, handler: { action in
+            // Show ios Feedback
+        })
+        alertController.addAction(yesAction)
+        
+        let noAction = UIAlertAction(title: "No", style: .default, handler: { action in
+            // let us know why
+            
+            
+        })
+        alertController.addAction(noAction)
+        
+        self.present(alertController, animated: true)
+    }
 }
 
 extension UITextField {
+    func setDoneOnKeyboard() {
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissKeyboard))
+        keyboardToolbar.items = [flexBarButton, doneBarButton]
+        self.inputAccessoryView = keyboardToolbar
+    }
+
+    @objc func dismissKeyboard() {
+        self.resignFirstResponder()
+    }
+}
+
+extension UITextView {
     func setDoneOnKeyboard() {
         let keyboardToolbar = UIToolbar()
         keyboardToolbar.sizeToFit()
@@ -80,4 +113,11 @@ extension UIColor {
     static let backgroundColor = UIColor(named: "background")
     static let moneyGreenColor = UIColor(named: "moneyGreen")
     static let defaultTextFieldPlaceholderColor = UIColor(hue: 50/360, saturation: 100/100, brightness: 0/100, alpha: 0.3)
+        static let placeholderGray                      = UIColor(red: 178/225, green: 178/225, blue: 178/225, alpha: 1.0)
+}
+
+extension Int {
+    static func currentTime() -> Int {
+        return Int(Date().timeIntervalSince1970)
+    }
 }

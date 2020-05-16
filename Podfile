@@ -8,6 +8,8 @@ target 'EverMore' do
   # Pods for EverMore
   pod 'SnapKit', '~> 5.0.0'
   pod 'Google-Mobile-Ads-SDK'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Database'
 
   target 'EverMoreTests' do
     inherit! :search_paths
