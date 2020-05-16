@@ -192,5 +192,17 @@ extension HomeViewController: EditBudgetDelegate {
     func getNewBudget() {
         budget = BudgetManager.get()
         budgetLabel.text = String(format: "$ %.2f", Double(budget.currentBudget ?? 0))
+        
+        if !UserDefaults.standard.bool(forKey: Constants.defaultFeedbackGiven) && Int.random(in: 1...10)%2 == 0 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0 , execute: {
+                    let feedbackVC = FeedbackViewController()
+                    feedbackVC.modalPresentationStyle = .overFullScreen
+                    
+                    self.present(feedbackVC, animated: true, completion: nil)
+                
+            })
+        }
+        
+        
     }
 }

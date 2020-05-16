@@ -13,17 +13,31 @@ class FeedbackViewController: UIViewController {
     
     private let textView = UITextView()
     private let thankYouView = UIView()
+    private let submitButton = UIButton()
+    
+    private let placeholderText = "Enter Feedback"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.isNavigationBarHidden = true
         setupViews()
     }
     
     private func setupViews() {
         self.view.backgroundColor = .backgroundColor
         
-
+        let closeButton = UIButton()
+        closeButton.setImage(UIImage(named: "close"), for: .normal)
+        closeButton.tintColor = .moneyGreenColor
+        closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
+        
+        self.view.addSubview(closeButton)
+        closeButton.snp.makeConstraints({ make in
+            make.top.equalToSuperview().offset(60)
+            make.width.height.equalTo(50 * Constants.smallScreenTypeScale)
+            make.left.equalToSuperview().offset(15)
+        })
+        
         let questionLabel = UILabel()
         questionLabel.numberOfLines = 0
         questionLabel.text = "Please let us know what we need to improve on."
@@ -37,7 +51,7 @@ class FeedbackViewController: UIViewController {
         
         textView.delegate = self
         textView.textColor = .placeholderGray
-        textView.text = "Enter Feedback"
+        textView.text = placeholderText
         textView.font = UIFont.systemFont(ofSize: 16, weight: .light)
         textView.setDoneOnKeyboard()
         
@@ -98,15 +112,30 @@ class FeedbackViewController: UIViewController {
     
     @objc private func submitButtonTapped() {
         // submit to firebase
-        Database.database().reference().child("evermore/feedback").childByAutoId().setValue(["text": textView.text, "date": Int.currentTime()])
-        // ok, thank message
-        UIView.animate(withDuration: 0.3, animations: {
-            self.thankYouView.transform = CGAffineTransform(scaleX: 1, y: 1)
-        })
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            self.dismiss(animated: true, completion: nil)
+        submitButton.isUserInteractionEnabled = false
+        if let text = textView.text {
+            if text != placeholderText {
+                Database.database().reference().child("evermore/feedback").childByAutoId().setValue(["text": textView.text,
+                                                                                                     "date": Int.currentTime()])
+                // ok, thank message
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.thankYouView.transform = CGAffineTransform(scaleX: 1, y: 1)
+                })
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
+                    self.dismiss(animated: true, completion: nil)
+                }
+            } else {
+                submitButton.isUserInteractionEnabled = true
+                showAlertMessage(title: "Error", message: "Please enter feedback. Thank you!")
+            }
         }
         
+        
+        
+    }
+    
+    @objc private func closeButtonTapped() {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -121,7 +150,7 @@ extension FeedbackViewController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text == "" {
             textView.textColor = .placeholderGray
-            textView.text = "Enter Feedback"
+            textView.text = placeholderText
         }
     }
 }

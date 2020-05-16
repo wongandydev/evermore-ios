@@ -56,7 +56,8 @@ struct Constants {
     
     // UserDefault keys
     
-    static let defaultBudget = "budget"
-    static let defaultScreenerCompleted = "screenerCompleted"
-    static let defaultTutorialCompleted = "tutorialCompleted"
+    static let defaultBudget                    = "budget"
+    static let defaultScreenerCompleted         = "screenerCompleted"
+    static let defaultTutorialCompleted         = "tutorialCompleted"
+    static let defaultFeedbackGiven             = "feedbackGiven"
 }
