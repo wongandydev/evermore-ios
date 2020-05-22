@@ -44,7 +44,7 @@ class FeedbackViewController: UIViewController {
         
         self.view.addSubview(questionLabel)
         questionLabel.snp.makeConstraints({ make in
-            make.top.equalToSuperview().offset(140 * Constants.smallScreenTypeScale)
+            make.top.equalToSuperview().offset(100 * Constants.smallScreenTypeScale)
             make.width.equalToSuperview().multipliedBy(0.8)
             make.centerX.equalToSuperview()
         })
