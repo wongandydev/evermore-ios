@@ -14,7 +14,6 @@ class TutorialViewController: UIViewController {
     
     private let pages = [
         ["text": "Welcome to \nEvermore!", "image": UIImage(named: "welcome")],
-        ["text": "Evermore is in beta. We are trying to add new features all the time. But here is how it works.", "image": UIImage(named: "beta")],
         ["text": "1. Add your debt and when you plan to pay it off. (If you don't have any good for you! If you do that's okay.) \n80% of Americans do!", "image": UIImage(named: "debt")],
         ["text": "2. Add how much you make. Daily, Weekly, Bi-Weekly or Monthly. (We do not do yearly because we think knowing how much you make in a closer interval keeps your brain budgetting!)", "image": UIImage(named: "salary")],
         ["text": "3. Lastly, add you savings goal. How much do you want to save?", "image": UIImage(named: "saving")],
