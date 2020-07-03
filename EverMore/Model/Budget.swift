@@ -42,7 +42,11 @@ class BudgetManager {
 struct Budget: Codable {
     var debt: Debt?
     var salary: Salary?
-    var savingGoal: Saving?
+    var savingGoal: Saving? {
+        didSet {
+            setReminder(savingGoal!)
+        }
+    }
     
     var currentBudget: Double?
     
@@ -51,6 +55,41 @@ struct Budget: Codable {
             currentBudget = goal?.amount
             BudgetManager.save(self)
         }
+    }
+    
+    private func setReminder(_ savingGoal: Saving) {
+        switch savingGoal.interval {
+        case .daily:
+            break
+        case .weekly:
+            break
+        case .bi_weekly:
+            break
+        case .monthly:
+            break
+        }
+    }
+    
+    // UNTIL NEXT TIME
+    // Notification Article: https://stackoverflow.com/questions/51054772/triggering-a-weekly-notification-in-swift-3-using-local-notifications-api
+    
+    private func setNotification() {
+//        let center = UNUserNotificationCenter.current()
+//
+//        let content = UNMutableNotificationContent()
+//        content.title = "Late wake up call"
+//        content.body = "The early bird catches the worm, but the second mouse gets the cheese."
+//        content.categoryIdentifier = "alarm"
+//        content.userInfo = ["customData": "fizzbuzz"]
+//        content.sound = UNNotificationSound.default
+//
+//        var dateComponents = DateComponents()
+//        dateComponents.hour = 10
+//        dateComponents.minute = 30
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+//
+//        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+//        center.add(request)
     }
     
     private func calculateGoalWithSameInterval(salary: Salary, saving: Saving) -> Goal {

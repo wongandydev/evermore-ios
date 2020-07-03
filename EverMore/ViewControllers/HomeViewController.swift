@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMobileAds
+import UserNotifications
 
 class HomeViewController: UIViewController {
     private var budget = BudgetManager.get()
@@ -17,6 +18,17 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Ask for Notification permission
+        let center = UNUserNotificationCenter.current()
+
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            if granted {
+                print("Notification Granted")
+            } else {
+                print("Notification Denied")
+            }
+        }
         
         if budget.goal == nil {
             budget.setGoal()
